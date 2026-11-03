@@ -1,0 +1,44 @@
+:root {
+  /* Brand Color Palette - Orion Placement LLC */
+  --color-header-bg: #001749;        /* Orion Prestige Midnight Navy */
+  --color-primary: #001749;          /* Deep Orion Navy */
+  --color-primary-dark: #000F2E;     /* Midnight Navy */
+  --color-primary-light: #1E5CD9;    /* Executive Sapphire Blue */
+  --color-secondary: #0A2566;        /* Deep Royal */
+  --color-accent: #D4AF37;           /* Prestigious Champagne Gold */
+  --color-accent-hover: #B89628;     /* Rich Gold Hover */
+  --color-star: #F59E0B;             /* Star Amber */
+
+  /* Neutral Surface Palette */
+  --color-bg-light: #F8FAFC;         /* Clean Slate White Surface */
+  --color-bg-white: #FFFFFF;         /* Crisp Pure White */
+  --color-bg-card: #FFFFFF;          /* Card Background */
+  --color-bg-subtle: #F1F5F9;        /* Light Slate Tint */
+
+  /* Text & Border Colors */
+  --color-text-primary: #0A192F;     /* Deep Navy Slate Headings */
+  --color-text-secondary: #334155;   /* High-readability slate-700 */
+  --color-text-muted: #64748B;       /* Secondary Muted Text */
+  --color-border: #E2E8F0;           /* Soft Border */
+  --color-border-subtle: #F1F5F9;
+
+  /* Success & Badges */
+  --color-success: #059669;
+  --color-success-bg: #D1FAE5;
+
+  /* Typography Variables */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Shadow Elevation */
+  --shadow-sm: 0 1px 3px rgba(0, 23, 73, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 23, 73, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 23, 73, 0.12);
+  --shadow-xl: 0 24px 60px rgba(0, 23, 73, 0.16);
+
+  /* Radius Tokens */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
