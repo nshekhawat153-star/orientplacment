@@ -11,6 +11,9 @@ import {
   ArrowRight,
   Sparkles,
   PhoneCall,
+  UploadCloud,
+  FileText,
+  Trash2,
 } from "lucide-react";
 
 export function HeroTalentForm() {
@@ -30,6 +33,15 @@ export function HeroTalentForm() {
   const [candidateTitle, setCandidateTitle] = useState("");
   const [candidateExperience, setCandidateExperience] = useState("Senior (6-10 yrs)");
   const [candidateLinkedin, setCandidateLinkedin] = useState("");
+  const [resumeFile, setResumeFile] = useState<{ name: string; size: string } | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+      setResumeFile({ name: file.name, size: `${sizeMb} MB` });
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -345,6 +357,41 @@ export function HeroTalentForm() {
                   className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-medium text-slate-800 bg-slate-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]/20 focus:border-[#1E5CD9] transition-all"
                 />
               </div>
+            </div>
+
+            {/* Resume Upload Dropzone */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">
+                Attach Resume / Executive CV (Optional)
+              </label>
+              {resumeFile ? (
+                <div className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs">
+                  <div className="flex items-center gap-2 text-emerald-800 font-semibold truncate">
+                    <FileText className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span className="truncate">{resumeFile.name}</span>
+                    <span className="text-[10px] text-emerald-600 font-normal">({resumeFile.size})</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setResumeFile(null)}
+                    className="text-slate-400 hover:text-red-500 p-1 transition-colors cursor-pointer"
+                    aria-label="Remove file"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              ) : (
+                <label className="flex items-center justify-center gap-2 p-3 rounded-xl border border-dashed border-slate-300 hover:border-[#1E5CD9] bg-slate-50/50 hover:bg-blue-50/30 transition-all cursor-pointer text-xs text-slate-500 hover:text-[#001749]">
+                  <UploadCloud className="w-4 h-4 text-[#1E5CD9]" />
+                  <span>Upload PDF or DOCX (Max 10MB)</span>
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </label>
+              )}
             </div>
 
             <button

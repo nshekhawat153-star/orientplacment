@@ -13,6 +13,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { HiringPlaybookLeadMagnet } from "@/components/sections/HiringPlaybookLeadMagnet";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
+import { LivePlacementToast } from "@/components/ui/LivePlacementToast";
 
 function SectionDivider() {
   return (
@@ -81,6 +82,9 @@ export function HomeClient() {
 
       {/* 11. Final High-Impact Urgent Search CTA */}
       <FinalCtaSection />
+
+      {/* Floating Verified Placement Social Proof Toast */}
+      <LivePlacementToast />
     </div>
   );
 }
