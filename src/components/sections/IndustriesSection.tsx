@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { industriesData, IndustryItem } from "@/data/industriesData";
+import { industriesData } from "@/data/industriesData";
 import {
   Scale,
   Activity,
@@ -14,7 +14,6 @@ import {
   AlertCircle,
   ArrowRight,
   ShieldCheck,
-  DollarSign,
   Clock,
   Users,
 } from "lucide-react";
@@ -47,24 +46,29 @@ export function IndustriesSection() {
   };
 
   return (
-    <section id="industries" className="scroll-mt-28 py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase border border-[#001749]/15">
-            <span>Specialized Practice Groups</span>
+    <section id="industries" className="scroll-mt-24 py-20 lg:py-28 bg-[#F5F2EB] border-b border-[#E5D9C5]/60">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12">
+        {/* Editorial Split Header (SwiftPainting Archetype) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 pb-10 border-b border-[#E5D9C5] items-end mb-12">
+          <div className="lg:col-span-6 space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B8860B]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308]" />
+              <span>Practice Groups</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#021124] tracking-tight leading-[1.1]">
+              Specialized Sectors <br className="hidden sm:inline" />
+              <span className="italic text-[#B8860B]">Where Precision Matters</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
-            We Don&apos;t Dabble. <br className="hidden sm:block" />
-            <span className="italic font-normal text-[#1E5CD9]">We Specialize Where Technical Precision Matters.</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-normal">
-            Hiring an intellectual property litigator is nothing like hiring a DevOps engineer. Our recruiters possess deep vertical fluency in their respective sectors.
-          </p>
+          <div className="lg:col-span-6">
+            <p className="text-[#021124]/75 text-base sm:text-lg leading-relaxed font-normal">
+              Hiring an IP litigator requires completely different industry fluency than placing a Cloud Architect. Our search partners operate exclusively within dedicated vertical practices.
+            </p>
+          </div>
         </div>
 
-        {/* Industry Switcher Buttons */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar justify-start lg:justify-center">
+        {/* Practice Switcher Horizontal Pills */}
+        <div className="flex items-center gap-2.5 overflow-x-auto pb-4 no-scrollbar justify-start lg:justify-center mb-8">
           {industriesData.map((ind) => {
             const Icon = getIcon(ind.iconName);
             const isSelected = ind.id === selectedId;
@@ -72,15 +76,15 @@ export function IndustriesSection() {
               <button
                 key={ind.id}
                 onClick={() => setSelectedId(ind.id)}
-                className={`flex items-center gap-2 px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all shrink-0 cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-3 rounded-full text-xs font-semibold whitespace-nowrap transition-all shrink-0 cursor-pointer ${
                   isSelected
-                    ? "bg-[#001749] text-white shadow-lg shadow-[#001749]/20 scale-[1.02]"
-                    : "bg-white text-slate-700 hover:text-[#001749] hover:bg-slate-100 border border-slate-200/80"
+                    ? "bg-[#021124] text-white shadow-md"
+                    : "bg-white text-[#021124]/70 hover:text-[#021124] hover:bg-[#FAF8F5] border border-[#E5D9C5]"
                 }`}
               >
                 <Icon
-                  className={`w-4 h-4 ${
-                    isSelected ? "text-[#D4AF37]" : "text-slate-400"
+                  className={`w-3.5 h-3.5 ${
+                    isSelected ? "text-[#EAB308]" : "text-[#021124]/40"
                   }`}
                 />
                 <span>{ind.name}</span>
@@ -89,65 +93,65 @@ export function IndustriesSection() {
           })}
         </div>
 
-        {/* Active Industry Showcase Card */}
-        <div className="mt-8 bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/60 border border-slate-200/80 animate-in fade-in duration-300">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Active Practice Showcase Card */}
+        <div className="bg-white rounded-[32px] p-8 sm:p-12 shadow-sm border border-[#E5D9C5] animate-in fade-in duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left Info: Overview & Roles */}
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1E5CD9]">
-                    Practice Intelligence
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B8860B]">
+                    Sector Intelligence
                   </span>
-                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1">
-                    <Users className="w-3 h-3 text-[#1E5CD9]" />
+                  <span className="text-xs font-medium px-3 py-0.5 rounded-full bg-[#FAF8F5] text-[#021124]/70 border border-[#E5D9C5] flex items-center gap-1.5">
+                    <Users className="w-3 h-3 text-[#B8860B]" />
                     {selectedIndustry.talentPool}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-[#001749]">
+                <h3 className="font-serif text-3xl sm:text-4xl text-[#021124] tracking-tight">
                   {selectedIndustry.name}
                 </h3>
-                <p className="text-sm font-semibold text-slate-500 mt-1">
+                <p className="text-sm font-medium text-[#021124]/60 mt-1">
                   {selectedIndustry.shortDesc}
                 </p>
-                <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-[#021124]/75 mt-4 leading-relaxed font-normal">
                   {selectedIndustry.overview}
                 </p>
               </div>
 
               {/* Benchmark Data Strip */}
-              <div className="grid grid-cols-2 gap-3 py-2">
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
-                    Typical Compensation Band
+              <div className="grid grid-cols-2 gap-4 py-2">
+                <div className="p-4 rounded-[20px] bg-[#FAF8F5] border border-[#E5D9C5]">
+                  <span className="text-[10px] text-[#021124]/50 font-semibold uppercase tracking-[0.15em] block">
+                    Compensation Range
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold text-[#001749] mt-0.5 block">
+                  <span className="font-serif text-lg sm:text-xl text-[#021124] mt-0.5 block">
                     {selectedIndustry.salaryBand}
                   </span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
-                    Avg. Turnaround Time
+                <div className="p-4 rounded-[20px] bg-[#FAF8F5] border border-[#E5D9C5]">
+                  <span className="text-[10px] text-[#021124]/50 font-semibold uppercase tracking-[0.15em] block">
+                    Turnaround to Shortlist
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold text-emerald-700 mt-0.5 block flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" />
+                  <span className="font-serif text-lg sm:text-xl text-emerald-800 mt-0.5 block flex items-center gap-1.5">
+                    <Clock className="w-4 h-4 text-emerald-600" />
                     {selectedIndustry.avgTurnaround}
                   </span>
                 </div>
               </div>
 
-              {/* Roles We Place Chips */}
+              {/* Roles Frequently Placed */}
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center gap-2">
+                <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#021124]/70 mb-3 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <span>Key Positions Frequently Placed:</span>
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedIndustry.roles.map((role, idx) => (
+                  {selectedIndustry.roles.slice(0, 5).map((role, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200 hover:bg-[#001749] hover:text-white transition-colors"
+                      className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#FAF8F5] text-[#021124] text-xs font-medium border border-[#E5D9C5]"
                     >
                       {role}
                     </span>
@@ -157,23 +161,23 @@ export function IndustriesSection() {
             </div>
 
             {/* Right Card: Challenge vs Solution */}
-            <div className="lg:col-span-5 bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200/80 space-y-6">
+            <div className="lg:col-span-5 bg-[#FAF8F5] rounded-[24px] p-7 sm:p-8 border border-[#E5D9C5] space-y-6">
               <div>
-                <div className="flex items-center gap-2 text-amber-800 font-bold text-xs uppercase tracking-wide mb-1.5">
+                <div className="flex items-center gap-2 text-amber-900 font-semibold text-xs uppercase tracking-wider mb-2">
                   <AlertCircle className="w-4 h-4 text-amber-600" />
-                  <span>The Industry Hiring Challenge</span>
+                  <span>The Market Challenge</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-[#021124]/75 leading-relaxed font-normal">
                   {selectedIndustry.keyChallenge}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-wide mb-1.5">
+              <div className="pt-4 border-t border-[#E5D9C5]">
+                <div className="flex items-center gap-2 text-emerald-950 font-semibold text-xs uppercase tracking-wider mb-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   <span>The Orion Sourcing Solution</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-[#021124]/75 leading-relaxed font-normal">
                   {selectedIndustry.solution}
                 </p>
               </div>
@@ -181,10 +185,10 @@ export function IndustriesSection() {
               <div className="pt-2">
                 <a
                   href="#hero-talent-form"
-                  className="w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                  className="w-full py-3.5 px-6 rounded-full text-xs font-semibold text-[#021124] bg-[#EAB308] hover:bg-[#CA8A04] shadow-sm flex items-center justify-center gap-2 transition-all"
                 >
                   <span>Request Shortlist for {selectedIndustry.name}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>

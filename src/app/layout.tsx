@@ -1,17 +1,34 @@
 import type { Metadata, Viewport } from "next";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-inter-tight",
+  display: "swap",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#001749",
+  themeColor: "#021124",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
   description: siteConfig.description,
   keywords: [
@@ -48,19 +65,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-800 antialiased selection:bg-[#1E5CD9] selection:text-white">
+    <html
+      lang="en"
+      className={`scroll-smooth ${instrumentSerif.variable} ${interTight.variable}`}
+    >
+      <body className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-800 antialiased selection:bg-[#EAB308] selection:text-[#021124] font-sans">
+        {/* Navigation Bar */}
         <Navbar />
+
+        {/* Main Content Area */}
         <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
+
+        {/* Footer */}
         <Footer />
+
+        {/* Mobile Sticky Quick Action Bar */}
         <MobileStickyBar />
       </body>
     </html>

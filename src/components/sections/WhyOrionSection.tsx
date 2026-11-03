@@ -1,96 +1,98 @@
 "use client";
 
 import React from "react";
-import { Check, X, ShieldCheck, Zap, Award, Users, CheckCircle2 } from "lucide-react";
+import { Check, X, ShieldCheck, Zap, Users, Award } from "lucide-react";
 import { HiringRoiCalculator } from "./HiringRoiCalculator";
 
 export function WhyOrionSection() {
   const comparisons = [
     {
       factor: "Sourcing Strategy",
-      traditional: "Repurposing job board applicants & passive resume databases",
+      traditional: "Recycled job board applicants & passive resume portals",
       orion: "Proactive direct headhunting of currently employed top 5% performers",
     },
     {
-      factor: "Recruiter Experience",
-      traditional: "Delegated to junior recruiters with high annual agency turnover",
+      factor: "Search Leadership",
+      traditional: "Delegated to junior sourcers with high annual agency turnover",
       orion: "Direct partner leadership (Justin Sofman & Jon Missirlian) on every mandate",
     },
     {
       factor: "Candidate Vetting",
-      traditional: "Basic keyword parsing and 10-minute automated screening calls",
-      orion: "Multi-stage behavioral evaluation, verified track record & cultural alignment",
+      traditional: "Automated keyword screening & brief 10-minute check-ins",
+      orion: "Multi-stage technical evaluation, reference audits & cultural alignment",
     },
     {
       factor: "Submission Volume",
-      traditional: "High volume resume dumps (hoping something sticks in your inbox)",
+      traditional: "High volume resume dumps into your hiring manager inbox",
       orion: "Curated shortlist of 3 to 5 interview-ready finalists with complete dossiers",
     },
     {
       factor: "Replacement Warranty",
-      traditional: "Limited 30-day window or future search credit",
+      traditional: "Standard 30-day window or future search credit",
       orion: "Comprehensive 90 to 180-day direct replacement guarantee",
     },
     {
-      factor: "Billing & Financial Risk",
-      traditional: "Hefty upfront retainers or non-refundable onboarding fees",
-      orion: "Contingency search: Zero upfront cost. You only pay when you successfully hire",
+      factor: "Financial Risk",
+      traditional: "Hefty upfront retainers or non-refundable fees",
+      orion: "Contingency search: Zero upfront cost. You only pay upon successful hire",
     },
   ];
 
   return (
-    <section id="why-orion" className="scroll-mt-28 py-20 md:py-28 bg-[#FAF8F5] border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase border border-[#001749]/15">
-            <span>The Orion Difference</span>
+    <section id="why-orion" className="scroll-mt-24 py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#E5D9C5]/50">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12">
+        {/* Editorial Split Header (SwiftPainting Archetype) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 pb-10 border-b border-[#E5D9C5] items-end mb-12">
+          <div className="lg:col-span-6 space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B8860B]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308]" />
+              <span>The Orion Standard</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#021124] tracking-tight leading-[1.1]">
+              Why Leading Companies Choose Orion <br className="hidden sm:inline" />
+              <span className="italic text-[#B8860B]">Over Traditional Agencies</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
-            Why High-Growth Companies Choose Orion <br className="hidden sm:block" />
-            <span className="italic font-normal text-[#1E5CD9]">Over Traditional Staffing Agencies</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-normal">
-            Hiring mistakes cost companies up to 30% of a candidate’s first-year earnings in lost velocity and rehiring overhead. Here is how our model protects your time and bottom line.
-          </p>
+          <div className="lg:col-span-6">
+            <p className="text-[#021124]/75 text-base sm:text-lg leading-relaxed font-normal">
+              Hiring mistakes cost companies up to 30% of first-year compensation in lost momentum. Here is how our partner-led contingency model protects your time and bottom line.
+            </p>
+          </div>
         </div>
 
         {/* Comparison Table Card */}
-        <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 overflow-hidden mb-16">
+        <div className="bg-white rounded-[28px] border border-[#E5D9C5] shadow-sm overflow-hidden mb-16">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[640px]">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50/70">
-                  <th className="py-5 px-6 text-xs sm:text-sm font-bold text-slate-600 uppercase tracking-wider w-1/4">
+                <tr className="border-b border-[#E5D9C5] bg-[#021124] text-white">
+                  <th className="py-4.5 px-6 text-xs font-semibold uppercase tracking-[0.15em] w-1/4">
                     Hiring Factor
                   </th>
-                  <th className="py-5 px-6 text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-wider w-3/8">
+                  <th className="py-4.5 px-6 text-xs font-semibold text-white/60 uppercase tracking-[0.15em] w-3/8">
                     Traditional Agencies
                   </th>
-                  <th className="py-5 px-6 text-xs sm:text-sm font-bold text-[#001749] bg-[#D4AF37]/10 uppercase tracking-wider w-3/8">
-                    <span className="flex items-center gap-1.5 text-[#001749]">
-                      <Award className="w-4 h-4 text-[#D4AF37]" />
+                  <th className="py-4.5 px-6 text-xs font-semibold text-[#EAB308] uppercase tracking-[0.15em] w-3/8">
+                    <span className="flex items-center gap-1.5">
+                      <Award className="w-4 h-4 text-[#EAB308]" />
                       <span>Orion Placement</span>
                     </span>
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+              <tbody className="divide-y divide-[#E5D9C5]/40 text-xs sm:text-sm">
                 {comparisons.map((item, idx) => (
-                  <tr
-                    key={idx}
-                    className="hover:bg-slate-50/50 transition-colors"
-                  >
-                    <td className="py-4.5 px-6 font-bold text-[#001749]">
+                  <tr key={idx} className="hover:bg-[#FAF8F5]/60 transition-colors">
+                    <td className="py-4 px-6 font-semibold text-[#021124]">
                       {item.factor}
                     </td>
-                    <td className="py-4.5 px-6 text-slate-500">
+                    <td className="py-4 px-6 text-[#021124]/60">
                       <div className="flex items-start gap-2">
-                        <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                        <X className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
                         <span>{item.traditional}</span>
                       </div>
                     </td>
-                    <td className="py-4.5 px-6 font-semibold text-slate-900 bg-[#D4AF37]/5">
+                    <td className="py-4 px-6 font-medium text-[#021124] bg-[#EAB308]/[0.03]">
                       <div className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{item.orion}</span>
@@ -105,45 +107,45 @@ export function WhyOrionSection() {
 
         {/* 3 Value Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+          <div className="bg-white rounded-[24px] p-7 border border-[#E5D9C5] shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200/60">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-bold text-[#001749] text-base mb-1">96% 12-Month Retention</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Our placements stay and thrive. Nearly all candidates placed by Orion celebrate their one-year anniversary with our clients.
+              <h4 className="font-serif text-xl text-[#021124] mb-1">96% 12-Month Retention</h4>
+              <p className="text-xs sm:text-sm text-[#021124]/70 leading-relaxed font-normal">
+                Our placements stay and thrive. Nearly every candidate placed celebrates their one-year anniversary with our clients.
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-[#001749]/10 text-[#001749] flex items-center justify-center shrink-0">
-              <Zap className="w-6 h-6 text-[#1E5CD9]" />
+          <div className="bg-white rounded-[24px] p-7 border border-[#E5D9C5] shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-[#021124]/5 text-[#021124] flex items-center justify-center shrink-0 border border-[#E5D9C5]">
+              <Zap className="w-6 h-6 text-[#B8860B]" />
             </div>
             <div>
-              <h4 className="font-bold text-[#001749] text-base mb-1">14-Day Average Shortlist</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Accelerate hiring velocity without compromising standards. Receive 3-5 verified finalists ready for second-round stakeholder interviews.
+              <h4 className="font-serif text-xl text-[#021124] mb-1">14-Day Average Shortlist</h4>
+              <p className="text-xs sm:text-sm text-[#021124]/70 leading-relaxed font-normal">
+                Accelerate hiring velocity without compromising quality. Receive 3 to 5 verified finalists ready for executive interviews.
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/20 text-[#B89628] flex items-center justify-center shrink-0">
-              <Users className="w-6 h-6" />
+          <div className="bg-white rounded-[24px] p-7 border border-[#E5D9C5] shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-[#EAB308]/15 text-[#021124] flex items-center justify-center shrink-0 border border-[#EAB308]/30">
+              <Users className="w-6 h-6 text-[#B8860B]" />
             </div>
             <div>
-              <h4 className="font-bold text-[#001749] text-base mb-1">Partner Accountability</h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                No junior account managers. You communicate directly with Justin Sofman and Jon Missirlian throughout the lifecycle of your search.
+              <h4 className="font-serif text-xl text-[#021124] mb-1">Direct Partner Accountability</h4>
+              <p className="text-xs sm:text-sm text-[#021124]/70 leading-relaxed font-normal">
+                No junior handoffs. You communicate directly with Justin Sofman and Jon Missirlian throughout every stage of your search.
               </p>
             </div>
           </div>
         </div>
 
         {/* Embedded Interactive Hiring Calculator */}
-        <div className="rounded-3xl overflow-hidden shadow-2xl">
+        <div className="rounded-[32px] overflow-hidden shadow-lg border border-[#E5D9C5]/30">
           <HiringRoiCalculator />
         </div>
       </div>

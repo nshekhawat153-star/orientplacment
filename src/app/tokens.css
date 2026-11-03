@@ -1,40 +1,40 @@
 :root {
-  /* Brand Color Palette - Orion Placement LLC */
-  --color-header-bg: #001749;        /* Orion Prestige Midnight Navy */
-  --color-primary: #001749;          /* Deep Orion Navy */
-  --color-primary-dark: #000F2E;     /* Midnight Navy */
-  --color-primary-light: #1E5CD9;    /* Executive Sapphire Blue */
-  --color-secondary: #0A2566;        /* Deep Royal */
-  --color-accent: #D4AF37;           /* Prestigious Champagne Gold */
-  --color-accent-hover: #B89628;     /* Rich Gold Hover */
-  --color-star: #F59E0B;             /* Star Amber */
+  /* Brand Color Palette - Orion Placement (Luxury Executive Search) */
+  --color-header-bg: #021124;        /* Dark Midnight Navy */
+  --color-primary: #021124;          /* Midnight Navy */
+  --color-primary-dark: #010A17;     /* Deep Obsidian */
+  --color-primary-light: #0A2540;    /* Classic Navy */
+  --color-secondary: #0A2540;        /* Deep Navy */
+  --color-accent: #EAB308;           /* Vibrant Golden Yellow / Champagne Gold */
+  --color-accent-hover: #CA8A04;     /* Deep Gold Hover */
+  --color-star: #EAB308;             /* Star Amber */
 
   /* Neutral Surface Palette */
-  --color-bg-light: #F8FAFC;         /* Clean Slate White Surface */
-  --color-bg-white: #FFFFFF;         /* Crisp Pure White */
-  --color-bg-card: #FFFFFF;          /* Card Background */
+  --color-bg-light: #FAF8F5;         /* Warm Cream Architectural Surface */
+  --color-bg-white: #FFFFFF;         /* Crisp White */
+  --color-bg-card: #FAF8F5;          /* Warm Card Background */
   --color-bg-subtle: #F1F5F9;        /* Light Slate Tint */
 
   /* Text & Border Colors */
-  --color-text-primary: #0A192F;     /* Deep Navy Slate Headings */
-  --color-text-secondary: #334155;   /* High-readability slate-700 */
+  --color-text-primary: #021124;     /* Midnight Charcoal Headings */
+  --color-text-secondary: #334155;   /* Body Slate (Readable slate-700) */
   --color-text-muted: #64748B;       /* Secondary Muted Text */
   --color-border: #E2E8F0;           /* Soft Border */
-  --color-border-subtle: #F1F5F9;
+  --color-border-warm: #E5D9C5;      /* Warm Champagne Cream Border */
 
   /* Success & Badges */
-  --color-success: #059669;
-  --color-success-bg: #D1FAE5;
+  --color-success: #166534;
+  --color-success-bg: #DCFCE7;
 
   /* Typography Variables */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
 
   /* Shadow Elevation */
-  --shadow-sm: 0 1px 3px rgba(0, 23, 73, 0.06);
-  --shadow-md: 0 4px 16px rgba(0, 23, 73, 0.08);
-  --shadow-lg: 0 12px 32px rgba(0, 23, 73, 0.12);
-  --shadow-xl: 0 24px 60px rgba(0, 23, 73, 0.16);
+  --shadow-sm: 0 1px 3px rgba(2, 17, 36, 0.08);
+  --shadow-md: 0 4px 14px rgba(2, 17, 36, 0.1);
+  --shadow-lg: 0 14px 36px rgba(2, 17, 36, 0.12);
+  --shadow-xl: 0 25px 60px rgba(2, 17, 36, 0.18);
 
   /* Radius Tokens */
   --radius-sm: 8px;

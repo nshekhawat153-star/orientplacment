@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
-import { CheckCircle2, ShieldCheck, Linkedin, Award, Quote, Calendar, ArrowRight, Clock, Sparkles } from "lucide-react";
+import { ShieldCheck, Linkedin, Award, Quote, Calendar, ArrowRight, Sparkles } from "lucide-react";
 import { Modal } from "@/components/ui/Modal";
 
 interface FounderInfo {
@@ -43,37 +43,46 @@ export function FoundersStorySection() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsBooked(true);
-    }, 1200);
+    }, 1000);
   };
 
   return (
-    <section id="founders" className="scroll-mt-28 py-20 md:py-28 bg-[#FAF8F5] border-b border-slate-200 relative overflow-hidden">
-      {/* Subtle Luxury Pattern */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="founders" className="scroll-mt-28 py-20 sm:py-32 bg-[#F5F2EB] border-b border-[#E5D9C5] relative overflow-hidden">
+      {/* 1400px Container Matching SwiftPainting Alignment */}
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12 relative z-10">
+        
+        {/* Editorial Split Section Header */}
+        <div className="w-full mx-auto mb-12 sm:mb-16 border-b border-[#E5D9C5]/80 pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            
+            {/* Left Column (5 Cols): Eyebrow + Large Serif Title */}
+            <div className="lg:col-span-6 space-y-3 text-left">
+              <div className="inline-flex items-center gap-2 bg-[#EAB308]/15 text-[#021124] border border-[#EAB308]/40 px-4 py-1.5 rounded-full text-xs font-sans font-extrabold uppercase tracking-widest shadow-sm">
+                <Award className="w-4 h-4 text-[#EAB308]" />
+                <span>LEADERSHIP &amp; ACCOUNTABILITY</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#021124] leading-[1.08] tracking-tight font-normal">
+                Built by Seasoned Recruiters. <br />
+                <span className="italic font-normal text-[#EAB308]">Not Automated Algorithms.</span>
+              </h2>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase border border-[#001749]/15">
-            <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Leadership & Consultative Precision</span>
+            {/* Right Column (7 Cols): Descriptive Copy */}
+            <div className="lg:col-span-6 text-left">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-sans font-normal">
+                Most recruitment agencies hand off your search to junior recruiters using mass keyword scrapers. Orion Placement was founded on the opposite standard: hands-on domain expertise, direct founder accountability, and headhunting the passive top 5% who actually drive enterprise growth.
+              </p>
+            </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
-            Built by Seasoned Recruiters. <br className="hidden sm:block" />
-            <span className="italic font-normal text-[#1E5CD9]">Not Automated Algorithms.</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-normal">
-            Most recruitment agencies rely on keyword scrapers and mass cold-emails. We founded Orion Placement on the opposite philosophy: high-touch domain expertise, senior-level accountability, and headhunting the passive talent who actually drive business results.
-          </p>
         </div>
 
         {/* Founders Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Justin Sofman Card */}
-          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl shadow-slate-200/50 border border-slate-200/80 flex flex-col justify-between hover:shadow-2xl hover:border-[#D4AF37]/40 transition-all duration-300 relative group">
+          <div className="bg-[#FAF8F5] rounded-[32px] p-7 sm:p-10 shadow-sm border-2 border-[#E5D9C5] hover:border-[#EAB308] flex flex-col justify-between transition-all duration-300 relative group">
             <div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-slate-100">
-                <div className="relative w-32 h-32 rounded-2xl overflow-hidden bg-slate-100 shrink-0 shadow-lg border-2 border-[#D4AF37]/40 p-1 bg-white">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-[#E5D9C5]/70">
+                <div className="relative w-32 h-32 rounded-2xl overflow-hidden bg-white shrink-0 shadow-md border-2 border-[#EAB308]/50 p-1">
                   <div className="relative w-full h-full rounded-xl overflow-hidden">
                     <Image
                       src={justin.image}
@@ -84,19 +93,19 @@ export function FoundersStorySection() {
                   </div>
                 </div>
 
-                <div className="text-center sm:text-left space-y-1">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#D4AF37]/15 text-[#92700E] uppercase tracking-wide border border-[#D4AF37]/30">
-                    Executive Strategy & Headhunting
+                <div className="text-center sm:text-left space-y-1 flex-1">
+                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-sans font-extrabold bg-[#EAB308]/15 text-[#854D0E] uppercase tracking-wider border border-[#EAB308]/40">
+                    EXECUTIVE STRATEGY &amp; HEADHUNTING
                   </span>
-                  <h3 className="text-2xl font-black text-[#001749]">{justin.name}</h3>
-                  <p className="text-sm font-semibold text-[#1E5CD9]">{justin.role}</p>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-normal text-[#021124] pt-0.5">{justin.name}</h3>
+                  <p className="text-sm font-semibold text-slate-600">{justin.role}</p>
                   
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
                     <a
                       href={justin.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-[#001749] font-medium transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-[#021124] font-medium transition-colors"
                     >
                       <Linkedin className="w-3.5 h-3.5 text-blue-600" />
                       <span>LinkedIn</span>
@@ -111,40 +120,40 @@ export function FoundersStorySection() {
                           focus: "Enterprise IT, Legal & C-Suite Search"
                         })
                       }
-                      className="inline-flex items-center gap-1.5 text-xs text-[#001749] hover:text-[#1E5CD9] font-bold transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs text-[#021124] hover:text-[#EAB308] font-bold transition-colors cursor-pointer"
                     >
-                      <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#EAB308]" />
                       <span>Book 15-Min Briefing</span>
                     </button>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 space-y-4">
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              <div className="pt-6 space-y-4 font-sans">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                   {justin.bio}
                 </p>
 
-                <div className="bg-slate-50/80 p-4 rounded-2xl border border-slate-200/60 relative">
-                  <Quote className="w-6 h-6 text-[#D4AF37]/40 absolute top-3 right-3" />
-                  <p className="text-xs sm:text-sm italic text-slate-700 font-medium pr-6 leading-relaxed">
+                <div className="bg-white/80 p-4.5 rounded-2xl border border-[#E5D9C5] relative">
+                  <Quote className="w-6 h-6 text-[#EAB308]/50 absolute top-3 right-3" />
+                  <p className="text-xs sm:text-sm italic text-slate-800 font-serif pr-6 leading-relaxed">
                     &ldquo;A great executive or technical hire accelerates a company for years; a mediocre hire drains momentum. We ensure you only interview the top 5%.&rdquo;
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span className="font-semibold text-slate-700">Practice Focus:</span>
-              <span className="font-medium text-[#001749]">Enterprise IT, Legal & C-Suite Search</span>
+            <div className="pt-6 mt-6 border-t border-[#E5D9C5]/70 flex items-center justify-between text-xs text-slate-600 font-sans">
+              <span className="font-bold text-slate-800">Practice Focus:</span>
+              <span className="font-semibold text-[#021124]">Enterprise IT, Legal &amp; C-Suite Search</span>
             </div>
           </div>
 
           {/* Jon Missirlian Card */}
-          <div className="bg-white rounded-3xl p-7 sm:p-9 shadow-xl shadow-slate-200/50 border border-slate-200/80 flex flex-col justify-between hover:shadow-2xl hover:border-[#D4AF37]/40 transition-all duration-300 relative group">
+          <div className="bg-[#FAF8F5] rounded-[32px] p-7 sm:p-10 shadow-sm border-2 border-[#E5D9C5] hover:border-[#EAB308] flex flex-col justify-between transition-all duration-300 relative group">
             <div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-slate-100">
-                <div className="relative w-32 h-32 rounded-2xl overflow-hidden bg-slate-100 shrink-0 shadow-lg border-2 border-[#D4AF37]/40 p-1 bg-white">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-[#E5D9C5]/70">
+                <div className="relative w-32 h-32 rounded-2xl overflow-hidden bg-white shrink-0 shadow-md border-2 border-[#EAB308]/50 p-1">
                   <div className="relative w-full h-full rounded-xl overflow-hidden">
                     <Image
                       src={jon.image}
@@ -155,19 +164,19 @@ export function FoundersStorySection() {
                   </div>
                 </div>
 
-                <div className="text-center sm:text-left space-y-1">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#D4AF37]/15 text-[#92700E] uppercase tracking-wide border border-[#D4AF37]/30">
-                    National Sourcing & Operations
+                <div className="text-center sm:text-left space-y-1 flex-1">
+                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-sans font-extrabold bg-[#EAB308]/15 text-[#854D0E] uppercase tracking-wider border border-[#EAB308]/40">
+                    NATIONAL SOURCING &amp; OPERATIONS
                   </span>
-                  <h3 className="text-2xl font-black text-[#001749]">{jon.name}</h3>
-                  <p className="text-sm font-semibold text-[#1E5CD9]">{jon.role}</p>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-normal text-[#021124] pt-0.5">{jon.name}</h3>
+                  <p className="text-sm font-semibold text-slate-600">{jon.role}</p>
                   
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
                     <a
                       href={jon.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-[#001749] font-medium transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-[#021124] font-medium transition-colors"
                     >
                       <Linkedin className="w-3.5 h-3.5 text-blue-600" />
                       <span>LinkedIn</span>
@@ -182,51 +191,51 @@ export function FoundersStorySection() {
                           focus: "Healthcare, Finance, Engineering & Construction"
                         })
                       }
-                      className="inline-flex items-center gap-1.5 text-xs text-[#001749] hover:text-[#1E5CD9] font-bold transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-xs text-[#021124] hover:text-[#EAB308] font-bold transition-colors cursor-pointer"
                     >
-                      <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#EAB308]" />
                       <span>Book 15-Min Briefing</span>
                     </button>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 space-y-4">
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              <div className="pt-6 space-y-4 font-sans">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                   {jon.bio}
                 </p>
 
-                <div className="bg-slate-50/80 p-4 rounded-2xl border border-slate-200/60 relative">
-                  <Quote className="w-6 h-6 text-[#D4AF37]/40 absolute top-3 right-3" />
-                  <p className="text-xs sm:text-sm italic text-slate-700 font-medium pr-6 leading-relaxed">
+                <div className="bg-white/80 p-4.5 rounded-2xl border border-[#E5D9C5] relative">
+                  <Quote className="w-6 h-6 text-[#EAB308]/50 absolute top-3 right-3" />
+                  <p className="text-xs sm:text-sm italic text-slate-800 font-serif pr-6 leading-relaxed">
                     &ldquo;The best performers are rarely on job boards; they are already succeeding elsewhere. Our job is knowing who they are and bringing them directly to your table.&rdquo;
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span className="font-semibold text-slate-700">Practice Focus:</span>
-              <span className="font-medium text-[#001749]">Healthcare, Finance, Engineering & Construction</span>
+            <div className="pt-6 mt-6 border-t border-[#E5D9C5]/70 flex items-center justify-between text-xs text-slate-600 font-sans">
+              <span className="font-bold text-slate-800">Practice Focus:</span>
+              <span className="font-semibold text-[#021124]">Healthcare, Finance, Engineering &amp; Construction</span>
             </div>
           </div>
         </div>
 
-        {/* Commitment Banner */}
-        <div className="mt-12 bg-gradient-to-r from-[#000F2E] via-[#001749] to-[#0A2566] rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-white/10">
+        {/* Commitment Banner Matching SwiftPainting Promise Section */}
+        <div className="mt-12 bg-[#021124] rounded-[24px] p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-white/10">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-lg sm:text-xl font-bold flex items-center justify-center md:justify-start gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
+            <h4 className="text-xl sm:text-2xl font-serif font-normal flex items-center justify-center md:justify-start gap-2">
+              <ShieldCheck className="w-5 h-5 text-[#EAB308]" />
               <span>Direct Partner Oversight On Every Search</span>
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
-              Unlike large corporate agencies where your requisition is passed down to entry-level trainees, Justin Sofman and Jon Missirlian actively direct candidate sourcing and stakeholder alignment on every single search.
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl font-sans font-normal">
+              Justin Sofman and Jon Missirlian actively oversee requisition scoping, passive headhunting, and finalist alignment on every single search engagement.
             </p>
           </div>
 
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            className="shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-slate-950 font-bold text-sm shadow-md hover:shadow-lg transition-all"
+            className="shrink-0 px-6 py-3.5 rounded-xl bg-[#EAB308] text-slate-950 hover:bg-[#FACC15] font-sans font-extrabold text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
           >
             Speak With A Founder Directly
           </a>
@@ -242,30 +251,26 @@ export function FoundersStorySection() {
         {selectedFounder && (
           <div>
             {isBooked ? (
-              <div className="text-center py-6 space-y-4">
+              <div className="text-center py-6 space-y-4 font-sans">
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border-2 border-emerald-500/30">
-                  <CheckCircle2 className="w-8 h-8" />
+                  <ShieldCheck className="w-8 h-8 text-emerald-600" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[#001749]">Briefing Request Received</h4>
+                  <h4 className="text-2xl font-serif text-[#021124]">Briefing Request Received</h4>
                   <p className="text-sm text-slate-600 mt-2 max-w-md mx-auto">
-                    Thank you, <span className="font-semibold text-slate-900">{clientName || "Partner"}</span>. {selectedFounder.name}&apos;s executive desk will review your requisition details and confirm your calendar invite within 2 business hours.
+                    Thank you, <span className="font-bold text-slate-900">{clientName || "Partner"}</span>. {selectedFounder.name}&apos;s desk will confirm your calendar invitation within 2 business hours.
                   </p>
-                </div>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 max-w-sm mx-auto space-y-1">
-                  <div className="font-semibold text-[#001749]">Selected Window: {timePreference}</div>
-                  <div>Direct Desk Phone: (201) 572-9538</div>
                 </div>
                 <button
                   onClick={handleCloseBooking}
-                  className="px-6 py-2.5 rounded-xl bg-[#001749] text-white text-xs font-bold hover:bg-[#0A2566] transition-all cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-[#021124] text-white text-xs font-bold hover:bg-[#EAB308] hover:text-[#021124] transition-all cursor-pointer"
                 >
                   Close Window
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleBookingSubmit} className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+              <form onSubmit={handleBookingSubmit} className="space-y-4 font-sans">
+                <div className="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-200">
                   <div className="w-11 h-11 rounded-lg overflow-hidden relative shrink-0">
                     <Image
                       src={selectedFounder.image}
@@ -275,7 +280,7 @@ export function FoundersStorySection() {
                     />
                   </div>
                   <div className="text-xs">
-                    <div className="font-bold text-[#001749]">{selectedFounder.name}</div>
+                    <div className="font-bold text-[#021124]">{selectedFounder.name}</div>
                     <div className="text-slate-500">{selectedFounder.role} · {selectedFounder.focus}</div>
                   </div>
                 </div>
@@ -289,7 +294,7 @@ export function FoundersStorySection() {
                       placeholder="Sarah Jenkins"
                       value={clientName}
                       onChange={(e) => setClientName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     />
                   </div>
                   <div>
@@ -300,7 +305,7 @@ export function FoundersStorySection() {
                       placeholder="Apex Partners / Health Network"
                       value={companyName}
                       onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     />
                   </div>
                 </div>
@@ -314,7 +319,7 @@ export function FoundersStorySection() {
                       placeholder="s.jenkins@company.com"
                       value={clientEmail}
                       onChange={(e) => setClientEmail(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     />
                   </div>
                   <div>
@@ -325,7 +330,7 @@ export function FoundersStorySection() {
                       placeholder="(201) 000-0000"
                       value={clientPhone}
                       onChange={(e) => setClientPhone(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     />
                   </div>
                 </div>
@@ -336,13 +341,12 @@ export function FoundersStorySection() {
                     <select
                       value={briefingTopic}
                       onChange={(e) => setBriefingTopic(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     >
-                      <option value="Direct Hire / Executive Search Priority">Direct Hire / Executive Search Priority</option>
-                      <option value="Urgent Clinical / Medical Leadership Vacancy">Urgent Clinical / Medical Leadership Vacancy</option>
-                      <option value="Lateral Law Firm Partner Acquisition">Lateral Law Firm Partner Acquisition</option>
-                      <option value="Specialized Contract Staffing Team">Specialized Contract Staffing Team</option>
-                      <option value="Confidential Succession Planning">Confidential Succession Planning</option>
+                      <option value="Direct Hire / Executive Search Priority">Direct Hire Executive Search</option>
+                      <option value="Urgent Clinical / Medical Leadership Vacancy">Clinical Leadership Vacancy</option>
+                      <option value="Lateral Law Firm Partner Acquisition">Law Firm Partner Acquisition</option>
+                      <option value="Specialized Contract Staffing Team">Contract Staffing Team</option>
                     </select>
                   </div>
 
@@ -351,12 +355,12 @@ export function FoundersStorySection() {
                     <select
                       value={timePreference}
                       onChange={(e) => setTimePreference(e.target.value)}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1E5CD9]"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#021124] bg-white"
                     >
                       <option value="Morning (9 AM - 12 PM EST)">Morning (9 AM - 12 PM EST)</option>
                       <option value="Early Afternoon (12 PM - 3 PM EST)">Early Afternoon (12 PM - 3 PM EST)</option>
                       <option value="Late Afternoon (3 PM - 6 PM EST)">Late Afternoon (3 PM - 6 PM EST)</option>
-                      <option value="Urgent (Today - Founder Direct Call)">Urgent (Today - Founder Direct Call)</option>
+                      <option value="Urgent (Today - Founder Direct Call)">Urgent (Today - Direct Call)</option>
                     </select>
                   </div>
                 </div>
@@ -364,7 +368,7 @@ export function FoundersStorySection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] hover:from-[#F59E0B] hover:to-[#D4AF37] shadow-lg shadow-[#D4AF37]/20 transition-all flex items-center justify-center gap-2 cursor-pointer mt-3"
+                  className="w-full py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-[#EAB308] hover:bg-[#FACC15] shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer mt-3"
                 >
                   {isSubmitting ? (
                     <span>Securing Founder Availability...</span>
@@ -376,8 +380,8 @@ export function FoundersStorySection() {
                   )}
                 </button>
 
-                <p className="text-[11px] text-center text-slate-400">
-                  🔒 Strictly confidential · No agency sales reps · Direct conversation with {selectedFounder.name}
+                <p className="text-[11px] text-center text-slate-500">
+                  🔒 Strictly confidential · Direct conversation with {selectedFounder.name}
                 </p>
               </form>
             )}

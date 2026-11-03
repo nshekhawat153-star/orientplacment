@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Calculator, ArrowRight, ShieldCheck, Clock, TrendingUp, Sparkles, DollarSign } from "lucide-react";
+import { Calculator, ArrowRight, ShieldCheck } from "lucide-react";
 
 export function HiringRoiCalculator() {
   const [salary, setSalary] = useState(165000);
-  const [urgencyDays, setUrgencyDays] = useState(14); // Orion time to shortlist
+  const urgencyDays = 14;
 
   // SHRM / Harvard Business Review Cost of Vacancy benchmark:
-  // An unfilled critical professional role costs roughly 1.5x base salary per year in lost productivity, burn-out & missed revenue.
+  // An unfilled critical professional role costs roughly 1.5x base salary per year.
   // Daily vacancy cost = (Salary * 1.5) / 250 working days.
   const dailyVacancyCost = Math.round((salary * 1.5) / 250);
 
@@ -18,40 +18,33 @@ export function HiringRoiCalculator() {
   const totalValueSaved = Math.round(daysSaved * dailyVacancyCost);
 
   return (
-    <section id="roi-calculator" className="scroll-mt-28 py-20 md:py-24 bg-gradient-to-b from-[#000F2E] via-[#001749] to-[#000F2E] text-white border-y border-slate-800 relative overflow-hidden">
-      {/* Background Ambient Lights */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#1E5CD9]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div id="roi-calculator" className="py-16 sm:py-20 bg-[#021124] text-white relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-10 lg:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] text-xs font-bold uppercase tracking-wider border border-[#D4AF37]/30">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#EAB308] text-xs font-semibold uppercase tracking-[0.2em] border border-white/10">
             <Calculator className="w-3.5 h-3.5" />
-            <span>Executive Search Intelligence</span>
+            <span>Vacancy Intelligence</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Calculate the Real Cost of Your <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#FDE047] to-[#EAB308]">
-              Unfilled Positions
-            </span>
-          </h2>
-          <p className="text-sm sm:text-base text-slate-300 font-normal">
-            Vacant leadership and technical seats quietly drain revenue, burn out existing teams, and stall momentum. See how quickly Orion’s 14-day turnaround protects your bottom line.
+          <h3 className="font-serif text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+            Calculate the Cost of Your <br className="hidden sm:inline" />
+            <span className="italic text-[#EAB308]">Unfilled Positions</span>
+          </h3>
+          <p className="text-xs sm:text-sm text-white/70 font-normal">
+            Vacant leadership seats quietly drain revenue and burn out teams. See how quickly Orion’s 14-day turnaround protects your bottom line.
           </p>
         </div>
 
         {/* Interactive Calculator Card */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white/[0.03] border border-[#E5D9C5]/20 rounded-[28px] p-6 sm:p-10 backdrop-blur-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Controls Column */}
-          <div className="lg:col-span-6 space-y-8">
-            {/* Slider 1: Salary */}
+          <div className="lg:col-span-6 space-y-6">
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
+              <div className="flex items-center justify-between mb-3">
+                <label className="text-xs font-semibold uppercase tracking-[0.15em] text-white/70">
                   Target Role Base Salary:
                 </label>
-                <span className="text-2xl font-black text-[#D4AF37]">
+                <span className="font-serif text-2xl sm:text-3xl text-[#EAB308]">
                   ${salary.toLocaleString()}
                 </span>
               </div>
@@ -62,9 +55,9 @@ export function HiringRoiCalculator() {
                 step="5000"
                 value={salary}
                 onChange={(e) => setSalary(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#D4AF37]"
+                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-[#EAB308]"
               />
-              <div className="flex justify-between text-[11px] text-slate-400 mt-1.5 font-medium">
+              <div className="flex justify-between text-[11px] text-white/40 mt-2 font-medium">
                 <span>$80K (Mid-Level)</span>
                 <span>$200K (Director)</span>
                 <span>$350K+ (C-Suite)</span>
@@ -72,62 +65,62 @@ export function HiringRoiCalculator() {
             </div>
 
             {/* Metric Comparison Pills */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/5 p-4 rounded-2xl border border-white/10 text-left">
-                <span className="text-[11px] text-slate-400 block font-semibold">
-                  Standard Agency Time-to-Fill:
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-white/5 p-4 rounded-[20px] border border-white/10 text-left">
+                <span className="text-[10px] text-white/50 block uppercase tracking-wider font-semibold">
+                  Standard Agency Fill:
                 </span>
-                <span className="text-2xl font-bold text-red-400 mt-0.5 block">
+                <span className="font-serif text-2xl text-rose-400 mt-0.5 block">
                   62 Days
                 </span>
-                <span className="text-[10px] text-slate-500">Industry avg. (SHRM data)</span>
+                <span className="text-[10px] text-white/40">Industry avg. (SHRM data)</span>
               </div>
 
-              <div className="bg-[#D4AF37]/10 p-4 rounded-2xl border border-[#D4AF37]/30 text-left">
-                <span className="text-[11px] text-[#D4AF37] block font-semibold">
-                  Orion Placement Shortlist:
+              <div className="bg-[#EAB308]/10 p-4 rounded-[20px] border border-[#EAB308]/30 text-left">
+                <span className="text-[10px] text-[#EAB308] block uppercase tracking-wider font-semibold">
+                  Orion Shortlist:
                 </span>
-                <span className="text-2xl font-bold text-emerald-400 mt-0.5 block">
+                <span className="font-serif text-2xl text-emerald-400 mt-0.5 block">
                   14 Days
                 </span>
-                <span className="text-[10px] text-slate-400">Vetted interview finalists</span>
+                <span className="text-[10px] text-white/60">Vetted interview finalists</span>
               </div>
             </div>
 
-            <div className="text-xs text-slate-400 leading-relaxed font-normal border-l-2 border-[#D4AF37] pl-3 italic">
-              Calculation standard: Critical professional vacancy cost is benchmarked at 1.5x base compensation in lost organizational velocity and team overtime.
+            <div className="text-xs text-white/50 leading-relaxed font-normal border-l-2 border-[#EAB308] pl-3 italic">
+              SHRM Standard: Critical vacancy cost is benchmarked at 1.5x base compensation in lost organizational velocity.
             </div>
           </div>
 
           {/* Value Outcome Display Card */}
-          <div className="lg:col-span-6 bg-gradient-to-br from-[#001749] to-[#0A2566] p-6 sm:p-8 rounded-2xl border-2 border-[#D4AF37]/40 shadow-xl space-y-6 text-center">
-            <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-500/30">
+          <div className="lg:col-span-6 bg-gradient-to-br from-[#031936] to-[#021124] p-7 sm:p-8 rounded-[24px] border border-[#E5D9C5]/30 space-y-6 text-center">
+            <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-[10px] font-semibold uppercase tracking-[0.2em] border border-emerald-500/25">
               Estimated Value Saved With Orion
             </div>
 
             <div>
-              <div className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+              <div className="font-serif text-4xl sm:text-5xl text-white tracking-tight">
                 ${totalValueSaved.toLocaleString()}
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">
+              <p className="text-xs text-white/65 mt-1 font-medium">
                 In productivity, revenue protection, and overtime mitigation
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-2 text-left border-t border-white/10">
+            <div className="grid grid-cols-2 gap-3 pt-3 text-left border-t border-white/10">
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold block">
+                <span className="text-[10px] text-white/40 uppercase font-semibold block">
                   Daily Cost of Vacancy:
                 </span>
-                <span className="text-base font-bold text-[#D4AF37]">
+                <span className="text-sm font-semibold text-[#EAB308]">
                   ${dailyVacancyCost.toLocaleString()}/day
                 </span>
               </div>
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold block">
+                <span className="text-[10px] text-white/40 uppercase font-semibold block">
                   Hiring Velocity Gain:
                 </span>
-                <span className="text-base font-bold text-emerald-400">
+                <span className="text-sm font-semibold text-emerald-400">
                   {daysSaved} Days Faster
                 </span>
               </div>
@@ -136,24 +129,24 @@ export function HiringRoiCalculator() {
             <div className="pt-2">
               <a
                 href="#hero-talent-form"
-                className="w-full py-3.5 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 px-6 rounded-full text-xs font-semibold text-[#021124] bg-[#EAB308] hover:bg-[#CA8A04] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
                 <span>Initiate A 14-Day Search For This Role</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
-            <div className="flex items-center justify-center gap-3 text-[11px] text-slate-400">
+            <div className="flex items-center justify-center gap-3 text-[11px] text-white/50">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 90-Day Warranty
               </span>
               <span>•</span>
-              <span>Zero Upfront Retainer (Contingency)</span>
+              <span>Contingency Model (Zero Upfront)</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

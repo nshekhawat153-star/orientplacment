@@ -1,24 +1,28 @@
 import React from "react";
 import { testimonialsData } from "@/data/testimonialsData";
-import { Star, CheckCircle2, Building, ShieldCheck } from "lucide-react";
+import { Star, CheckCircle2, Building2, ShieldCheck } from "lucide-react";
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="scroll-mt-28 py-20 md:py-28 bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold tracking-wide uppercase border border-emerald-200">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Verified Hiring Outcomes</span>
+    <section id="testimonials" className="scroll-mt-24 py-20 lg:py-28 bg-white border-b border-[#E5D9C5]/50">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12">
+        {/* Editorial Split Header (SwiftPainting Archetype) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 pb-10 border-b border-[#E5D9C5] items-end mb-12">
+          <div className="lg:col-span-6 space-y-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B8860B]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308]" />
+              <span>Client & Candidate Proof</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#021124] tracking-tight leading-[1.1]">
+              Verified Outcomes <br className="hidden sm:inline" />
+              <span className="italic text-[#B8860B]">From Industry Leaders</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
-            Trusted by Managing Partners, <br className="hidden sm:block" />
-            <span className="italic font-normal text-[#1E5CD9]">Chief Medical Officers & Tech Founders</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-normal">
-            Read candid feedback from organizational leaders who have built high-impact teams with Orion Placement.
-          </p>
+          <div className="lg:col-span-6">
+            <p className="text-[#021124]/75 text-base sm:text-lg leading-relaxed font-normal">
+              Read candid testimonials from managing partners, chief medical officers, and placed executives who have built enduring leadership teams with Orion Placement.
+            </p>
+          </div>
         </div>
 
         {/* Testimonials Grid */}
@@ -26,40 +30,42 @@ export function TestimonialsSection() {
           {testimonialsData.map((test) => (
             <div
               key={test.id}
-              className="bg-slate-50/70 rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:border-[#D4AF37]/50"
+              className="bg-[#FAF8F5] rounded-[28px] p-8 sm:p-10 border border-[#E5D9C5] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Header: Stars & Industry */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex text-amber-400">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex text-[#EAB308] gap-1">
                     {[...Array(test.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-4 h-4 fill-[#EAB308] text-[#EAB308]" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider bg-white px-2.5 py-1 rounded-full border border-slate-200">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#021124]/60 bg-white px-3 py-1 rounded-full border border-[#E5D9C5]">
                     {test.industry}
                   </span>
                 </div>
 
                 {/* Quote */}
-                <p className="text-sm sm:text-base text-slate-700 font-normal leading-relaxed italic mb-6">
+                <p className="font-serif text-lg sm:text-xl text-[#021124] leading-relaxed italic mb-8">
                   &ldquo;{test.quote}&rdquo;
                 </p>
               </div>
 
               {/* Author Info */}
-              <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+              <div className="pt-6 border-t border-[#E5D9C5]/50 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-[#001749] flex items-center gap-1.5">
+                  <h4 className="text-sm font-semibold text-[#021124] flex items-center gap-1.5">
                     <span>{test.author}</span>
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 inline" />
                   </h4>
-                  <p className="text-xs text-[#1E5CD9] font-medium">{test.role}</p>
-                  <p className="text-[11px] text-slate-400 font-normal">{test.companyType} • {test.location}</p>
+                  <p className="text-xs text-[#B8860B] font-medium mt-0.5">{test.role}</p>
+                  <p className="text-[11px] text-[#021124]/50 font-normal mt-0.5">
+                    {test.companyType} • {test.location}
+                  </p>
                 </div>
 
-                <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 shrink-0">
-                  <Building className="w-5 h-5 text-[#001749]" />
+                <div className="w-10 h-10 rounded-full bg-white border border-[#E5D9C5] flex items-center justify-center text-[#021124]/40 shrink-0">
+                  <Building2 className="w-4 h-4 text-[#021124]" />
                 </div>
               </div>
             </div>
