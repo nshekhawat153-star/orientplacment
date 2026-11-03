@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustBarSection } from "@/components/sections/TrustBarSection";
+import { LiveSearchesMarquee } from "@/components/sections/LiveSearchesMarquee";
 import { FoundersStorySection } from "@/components/sections/FoundersStorySection";
 import { ServicesGridSection } from "@/components/sections/ServicesGridSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
@@ -36,6 +36,9 @@ export function HomeClient() {
       {/* 2. Trust Credentials & Placement Stats */}
       <TrustBarSection />
 
+      {/* 2.5 Live Executive Search Requisitions Marquee */}
+      <LiveSearchesMarquee />
+
       {/* 3. Founders Story: Justin Sofman & Jon Missirlian */}
       <FoundersStorySection />
 
@@ -46,7 +49,7 @@ export function HomeClient() {
 
       <SectionDivider />
 
-      {/* 5. Interactive Industry Specializations (7 Verticals) */}
+      {/* 5. Interactive Industry Specializations (7 Verticals + Intelligence) */}
       <IndustriesSection />
 
       <SectionDivider />
@@ -56,7 +59,7 @@ export function HomeClient() {
 
       <SectionDivider />
 
-      {/* 7. Why Orion: Comparison Table (Agencies vs Orion) */}
+      {/* 7. Why Orion: Comparison Table + Embedded Interactive ROI & Vacancy Calculator */}
       <WhyOrionSection />
 
       <SectionDivider />

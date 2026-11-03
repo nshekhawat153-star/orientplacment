@@ -14,6 +14,9 @@ import {
   AlertCircle,
   ArrowRight,
   ShieldCheck,
+  DollarSign,
+  Clock,
+  Users,
 } from "lucide-react";
 
 export function IndustriesSection() {
@@ -44,16 +47,16 @@ export function IndustriesSection() {
   };
 
   return (
-    <section id="industries" className="py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200">
+    <section id="industries" className="scroll-mt-28 py-20 md:py-28 bg-[#F8FAFC] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase border border-[#001749]/15">
             <span>Specialized Practice Groups</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
             We Don&apos;t Dabble. <br className="hidden sm:block" />
-            <span className="text-[#1E5CD9]">We Specialize Where Technical Precision Matters.</span>
+            <span className="italic font-normal text-[#1E5CD9]">We Specialize Where Technical Precision Matters.</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal">
             Hiring an intellectual property litigator is nothing like hiring a DevOps engineer. Our recruiters possess deep vertical fluency in their respective sectors.
@@ -92,9 +95,16 @@ export function IndustriesSection() {
             {/* Left Info: Overview & Roles */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#1E5CD9] block mb-1">
-                  Practice Overview
-                </span>
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1E5CD9]">
+                    Practice Intelligence
+                  </span>
+                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1">
+                    <Users className="w-3 h-3 text-[#1E5CD9]" />
+                    {selectedIndustry.talentPool}
+                  </span>
+                </div>
+
                 <h3 className="text-2xl sm:text-3xl font-black text-[#001749]">
                   {selectedIndustry.name}
                 </h3>
@@ -104,6 +114,27 @@ export function IndustriesSection() {
                 <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed font-normal">
                   {selectedIndustry.overview}
                 </p>
+              </div>
+
+              {/* Benchmark Data Strip */}
+              <div className="grid grid-cols-2 gap-3 py-2">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
+                    Typical Compensation Band
+                  </span>
+                  <span className="text-sm sm:text-base font-extrabold text-[#001749] mt-0.5 block">
+                    {selectedIndustry.salaryBand}
+                  </span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70">
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
+                    Avg. Turnaround Time
+                  </span>
+                  <span className="text-sm sm:text-base font-extrabold text-emerald-700 mt-0.5 block flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5" />
+                    {selectedIndustry.avgTurnaround}
+                  </span>
+                </div>
               </div>
 
               {/* Roles We Place Chips */}
@@ -116,7 +147,7 @@ export function IndustriesSection() {
                   {selectedIndustry.roles.map((role, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-100 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200 hover:bg-[#001749] hover:text-white transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-100/90 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200 hover:bg-[#001749] hover:text-white transition-colors"
                     >
                       {role}
                     </span>
@@ -126,9 +157,9 @@ export function IndustriesSection() {
             </div>
 
             {/* Right Card: Challenge vs Solution */}
-            <div className="lg:col-span-5 bg-slate-50 rounded-2xl p-6 border border-slate-200/70 space-y-6">
+            <div className="lg:col-span-5 bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200/80 space-y-6">
               <div>
-                <div className="flex items-center gap-2 text-amber-700 font-bold text-xs uppercase tracking-wide mb-1.5">
+                <div className="flex items-center gap-2 text-amber-800 font-bold text-xs uppercase tracking-wide mb-1.5">
                   <AlertCircle className="w-4 h-4 text-amber-600" />
                   <span>The Industry Hiring Challenge</span>
                 </div>
@@ -138,7 +169,7 @@ export function IndustriesSection() {
               </div>
 
               <div className="pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2 text-emerald-800 font-bold text-xs uppercase tracking-wide mb-1.5">
+                <div className="flex items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-wide mb-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   <span>The Orion Sourcing Solution</span>
                 </div>
@@ -150,9 +181,9 @@ export function IndustriesSection() {
               <div className="pt-2">
                 <a
                   href="#hero-talent-form"
-                  className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                  className="w-full py-3.5 px-4 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition-all"
                 >
-                  <span>Hire for {selectedIndustry.name}</span>
+                  <span>Request Shortlist for {selectedIndustry.name}</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 
 export const viewport: Viewport = {
   themeColor: "#001749",
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
         <Footer />
+        <MobileStickyBar />
       </body>
     </html>
   );

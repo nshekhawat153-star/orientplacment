@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { Check, X, ShieldCheck, Zap, Award, Users, CheckCircle2 } from "lucide-react";
+import { HiringRoiCalculator } from "./HiringRoiCalculator";
 
 export function WhyOrionSection() {
   const comparisons = [
@@ -36,11 +39,11 @@ export function WhyOrionSection() {
   ];
 
   return (
-    <section id="why-orion" className="py-20 md:py-28 bg-[#FAF8F5] border-b border-slate-200">
+    <section id="why-orion" className="scroll-mt-28 py-20 md:py-28 bg-[#FAF8F5] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#001749]/10 text-[#001749] text-xs font-bold tracking-wide uppercase border border-[#001749]/15">
             <span>The Orion Difference</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
@@ -53,7 +56,7 @@ export function WhyOrionSection() {
         </div>
 
         {/* Comparison Table Card */}
-        <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 overflow-hidden mb-16">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[640px]">
               <thead>
@@ -101,42 +104,47 @@ export function WhyOrionSection() {
         </div>
 
         {/* 3 Value Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
               <h4 className="font-bold text-[#001749] text-base mb-1">96% 12-Month Retention</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 Our placements stay and thrive. Nearly all candidates placed by Orion celebrate their one-year anniversary with our clients.
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#001749]/10 text-[#001749] flex items-center justify-center shrink-0">
-              <Zap className="w-5 h-5 text-[#1E5CD9]" />
+          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-[#001749]/10 text-[#001749] flex items-center justify-center shrink-0">
+              <Zap className="w-6 h-6 text-[#1E5CD9]" />
             </div>
             <div>
               <h4 className="font-bold text-[#001749] text-base mb-1">14-Day Average Shortlist</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 Accelerate hiring velocity without compromising standards. Receive 3-5 verified finalists ready for second-round stakeholder interviews.
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 text-[#B89628] flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5" />
+          <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/20 text-[#B89628] flex items-center justify-center shrink-0">
+              <Users className="w-6 h-6" />
             </div>
             <div>
               <h4 className="font-bold text-[#001749] text-base mb-1">Partner Accountability</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 No junior account managers. You communicate directly with Justin Sofman and Jon Missirlian throughout the lifecycle of your search.
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Embedded Interactive Hiring Calculator */}
+        <div className="rounded-3xl overflow-hidden shadow-2xl">
+          <HiringRoiCalculator />
         </div>
       </div>
     </section>

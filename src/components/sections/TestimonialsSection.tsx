@@ -1,10 +1,10 @@
 import React from "react";
 import { testimonialsData } from "@/data/testimonialsData";
-import { Star, Quote, CheckCircle2, Building, ShieldCheck } from "lucide-react";
+import { Star, CheckCircle2, Building, ShieldCheck } from "lucide-react";
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-white border-b border-slate-200">
+    <section id="testimonials" className="scroll-mt-28 py-20 md:py-28 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -14,7 +14,7 @@ export function TestimonialsSection() {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#001749] tracking-tight">
             Trusted by Managing Partners, <br className="hidden sm:block" />
-            <span className="text-[#1E5CD9]">Chief Medical Officers & Tech Founders</span>
+            <span className="italic font-normal text-[#1E5CD9]">Chief Medical Officers & Tech Founders</span>
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal">
             Read candid feedback from organizational leaders who have built high-impact teams with Orion Placement.
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
           {testimonialsData.map((test) => (
             <div
               key={test.id}
-              className="bg-slate-50/70 rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="bg-slate-50/70 rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:border-[#D4AF37]/50"
             >
               <div>
                 {/* Header: Stars & Industry */}

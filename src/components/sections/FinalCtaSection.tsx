@@ -4,7 +4,7 @@ import { Phone, ArrowRight, ShieldCheck, Clock, CheckCircle2, Sparkles } from "l
 
 export function FinalCtaSection() {
   return (
-    <section className="py-20 md:py-28 bg-[#001749] text-white relative overflow-hidden border-b border-slate-800">
+    <section id="final-cta" className="scroll-mt-28 py-20 md:py-28 bg-[#001749] text-white relative overflow-hidden border-b border-slate-800">
       {/* Background Accent Gradients */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#1E5CD9]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none" />

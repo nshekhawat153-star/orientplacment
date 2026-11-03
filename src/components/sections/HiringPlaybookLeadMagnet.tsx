@@ -19,7 +19,7 @@ export function HiringPlaybookLeadMagnet() {
   };
 
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-br from-[#000F2E] via-[#001749] to-[#0A2566] text-white border-b border-slate-800 relative overflow-hidden">
+    <section id="playbook" className="scroll-mt-28 py-20 md:py-24 bg-gradient-to-br from-[#000F2E] via-[#001749] to-[#0A2566] text-white border-b border-slate-800 relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
 

@@ -7,6 +7,9 @@ export interface IndustryItem {
   keyChallenge: string;
   solution: string;
   iconName: string;
+  salaryBand: string;
+  avgTurnaround: string;
+  talentPool: string;
 }
 
 export const industriesData: IndustryItem[] = [
@@ -28,6 +31,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Lateral partner and senior associate talent is heavily recruited and reluctant to respond to mass outreach.",
     solution: "Confidential, partner-level consultative headhunting that respects attorney privacy and firm culture.",
     iconName: "Scale",
+    salaryBand: "$140,000 – $450,000+",
+    avgTurnaround: "14 Days to Shortlist",
+    talentPool: "7,200+ Vetted Attorneys & Staff",
   },
   {
     id: "healthcare",
@@ -47,6 +53,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Severe industry burnout, strict credentialing delays, and high turnover across administrative teams.",
     solution: "Pre-screened, credential-verified talent pipelines ready for immediate onboarding and long-term retention.",
     iconName: "Activity",
+    salaryBand: "$95,000 – $280,000",
+    avgTurnaround: "10 Days to Shortlist",
+    talentPool: "11,500+ Clinical & Admin Pros",
   },
   {
     id: "technology",
@@ -66,6 +75,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Inflated resumes, lack of practical problem-solving skills, and fierce competition for passive engineers.",
     solution: "Technical vetting rubrics that assess verified architecture experience and pragmatic delivery.",
     iconName: "Cpu",
+    salaryBand: "$130,000 – $320,000 + Equity",
+    avgTurnaround: "12 Days to Shortlist",
+    talentPool: "14,800+ Engineers & Architects",
   },
   {
     id: "finance",
@@ -85,6 +97,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Severe nationwide shortage of licensed CPAs and experienced corporate controllers.",
     solution: "Direct outreach to top-performing finance leaders ready for career elevation and ownership stakes.",
     iconName: "TrendingUp",
+    salaryBand: "$110,000 – $350,000+",
+    avgTurnaround: "12 Days to Shortlist",
+    talentPool: "8,900+ CPAs & Finance Execs",
   },
   {
     id: "construction",
@@ -104,6 +119,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Retaining reliable superintendents and estimators with verified project portfolio completions.",
     solution: "Deep regional field connections and thorough project portfolio reference verifications.",
     iconName: "Building2",
+    salaryBand: "$105,000 – $260,000",
+    avgTurnaround: "14 Days to Shortlist",
+    talentPool: "6,400+ Builders & Asset Mgrs",
   },
   {
     id: "executive",
@@ -123,6 +141,9 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Assessing authentic cultural alignment, leadership endurance, and strategic stakeholder management.",
     solution: "Retained, confidential dossiers with 360-degree reference audits and milestone-based placement models.",
     iconName: "Award",
+    salaryBand: "$220,000 – $550,000+",
+    avgTurnaround: "21 Days to Shortlist",
+    talentPool: "3,800+ Board & C-Suite Leaders",
   },
   {
     id: "sales",
@@ -141,5 +162,8 @@ export const industriesData: IndustryItem[] = [
     keyChallenge: "Sifting through salespeople who interview well but fail to hit real-world quota targets.",
     solution: "Historical quota verification, compensation validation, and pipeline methodology assessments.",
     iconName: "Target",
+    salaryBand: "$120,000 – $300,000 (OTE)",
+    avgTurnaround: "10 Days to Shortlist",
+    talentPool: "5,900+ Revenue Producers",
   },
 ];

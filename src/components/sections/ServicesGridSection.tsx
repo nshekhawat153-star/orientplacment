@@ -21,7 +21,7 @@ export function ServicesGridSection() {
   };
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-white border-b border-slate-200">
+    <section id="services" className="scroll-mt-28 py-20 md:py-28 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -44,15 +44,15 @@ export function ServicesGridSection() {
             return (
               <div
                 key={service.id}
-                className={`relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${
+                className={`relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 ${
                   service.popular
                     ? "bg-[#001749] text-white shadow-xl shadow-[#001749]/15 border-2 border-[#D4AF37]"
-                    : "bg-slate-50/60 text-slate-800 border border-slate-200/80 hover:bg-white"
+                    : "bg-slate-50/70 text-slate-800 border border-slate-200/80 hover:bg-white hover:border-[#D4AF37]/50"
                 }`}
               >
                 {/* Popular Pill */}
                 {service.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-slate-950 font-black text-[11px] uppercase tracking-wider shadow-md flex items-center gap-1">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] text-slate-950 font-black text-[11px] uppercase tracking-wider shadow-md flex items-center gap-1">
                     <Sparkles className="w-3 h-3" />
                     <span>Most Requested</span>
                   </div>
@@ -74,7 +74,7 @@ export function ServicesGridSection() {
                       className={`text-[11px] font-bold px-2.5 py-1 rounded-full ${
                         service.popular
                           ? "bg-white/15 text-slate-200"
-                          : "bg-slate-200/60 text-slate-700"
+                          : "bg-slate-200/70 text-slate-700"
                       }`}
                     >
                       {service.badge}
@@ -121,14 +121,14 @@ export function ServicesGridSection() {
                         service.popular ? "text-slate-400" : "text-slate-500"
                       }`}
                     >
-                      Guarantee:
+                      Warranty Protection:
                     </span>
                     <span
                       className={`text-xs font-bold flex items-center gap-1 ${
                         service.popular ? "text-[#D4AF37]" : "text-[#001749]"
                       }`}
                     >
-                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
                       {service.guarantee}
                     </span>
                   </div>

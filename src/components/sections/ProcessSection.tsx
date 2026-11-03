@@ -58,7 +58,7 @@ export function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="py-20 md:py-28 bg-[#001749] text-white border-b border-slate-800 relative overflow-hidden">
+    <section id="process" className="scroll-mt-28 py-20 md:py-28 bg-[#001749] text-white border-b border-slate-800 relative overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#1E5CD9]/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
@@ -87,7 +87,7 @@ export function ProcessSection() {
             return (
               <div
                 key={idx}
-                className="relative bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:bg-white/10 transition-all duration-300 group"
+                className="relative bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:bg-white/10 hover:border-[#D4AF37]/40 transition-all duration-300 group"
               >
                 <div>
                   {/* Step Header */}
@@ -132,7 +132,7 @@ export function ProcessSection() {
         <div className="mt-14 text-center">
           <a
             href="#hero-talent-form"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 cursor-pointer"
           >
             <span>Initiate A Confidential Search Request</span>
             <ArrowRight className="w-4 h-4" />
