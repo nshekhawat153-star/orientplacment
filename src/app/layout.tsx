@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Instrument_Serif, Inter_Tight, Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -18,6 +15,20 @@ const interTight = Inter_Tight({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-inter-tight",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -67,20 +78,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${instrumentSerif.variable} ${interTight.variable}`}
+      className={`scroll-smooth ${fraunces.variable} ${inter.variable} ${instrumentSerif.variable} ${interTight.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-[#FAFBFD] text-slate-800 antialiased selection:bg-[#00D2FF] selection:text-[#040D21] font-sans">
-        {/* Navigation Bar */}
-        <Navbar />
-
-        {/* Main Content Area */}
-        <main className="flex-1 w-full max-w-full overflow-x-clip">{children}</main>
-
-        {/* Footer */}
-        <Footer />
-
-        {/* Mobile Sticky Quick Action Bar */}
-        <MobileStickyBar />
+        {children}
       </body>
     </html>
   );
