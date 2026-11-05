@@ -58,17 +58,17 @@ export function LiveSearchesMarquee() {
   const marqueeItems = [...activeSearches, ...activeSearches];
 
   return (
-    <div className="w-full bg-[#010A16] border-y border-[#E5D9C5]/10 py-3.5 overflow-hidden relative z-10">
+    <div className="w-full bg-[#030917] border-y border-white/10 py-3.5 overflow-hidden relative z-10">
       {/* Edge Fades for Depth */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#010A16] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#010A16] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#030917] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#030917] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-12 flex items-center gap-4 mb-2">
-        <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#EAB308] shrink-0 bg-[#EAB308]/10 px-2.5 py-1 rounded-full border border-[#EAB308]/25">
+        <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#00D2FF] shrink-0 bg-[#00D2FF]/10 px-2.5 py-1 rounded-full border border-[#00D2FF]/25">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           Live Search Desk
         </span>
-        <span className="text-xs text-white/50 font-normal truncate">
+        <span className="text-xs text-slate-400 font-normal truncate">
           Active Executive Requisitions Across 48 States • Confidential Representation
         </span>
       </div>
@@ -77,14 +77,14 @@ export function LiveSearchesMarquee() {
         {marqueeItems.map((item, idx) => (
           <div
             key={idx}
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.03] border border-[#E5D9C5]/15 hover:border-[#EAB308]/40 hover:bg-white/[0.06] transition-all shrink-0 cursor-pointer group"
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 hover:border-[#00D2FF]/50 hover:bg-white/[0.06] transition-all shrink-0 cursor-pointer group"
           >
             <div className="flex items-center gap-2">
-              <span className="text-xs font-medium text-white/95 group-hover:text-[#EAB308] transition-colors">
+              <span className="text-xs font-medium text-white/95 group-hover:text-[#00D2FF] transition-colors">
                 {item.role}
               </span>
               {item.urgent && (
-                <span className="px-1.5 py-0.2 rounded-full text-[9px] font-semibold bg-[#EAB308]/20 text-[#EAB308] border border-[#EAB308]/30">
+                <span className="px-1.5 py-0.2 rounded-full text-[9px] font-semibold bg-[#00D2FF]/20 text-[#00D2FF] border border-[#00D2FF]/30">
                   Urgent
                 </span>
               )}

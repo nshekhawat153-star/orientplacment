@@ -17,7 +17,7 @@ import { LivePlacementToast } from "@/components/ui/LivePlacementToast";
 
 export function HomeClient() {
   return (
-    <div className="w-full max-w-full overflow-x-clip min-h-screen bg-[#FAF8F5] text-[#021124]">
+    <div className="w-full max-w-full overflow-x-clip min-h-screen bg-[#FAFBFD] text-[#040D21]">
       {/* 1. Hero Section with Interactive Dual-Funnel Form */}
       <HeroSection />
 

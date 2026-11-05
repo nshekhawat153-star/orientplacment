@@ -22,7 +22,7 @@ const interTight = Inter_Tight({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#021124",
+  themeColor: "#040D21",
   width: "device-width",
   initialScale: 1,
 };
@@ -69,7 +69,7 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${instrumentSerif.variable} ${interTight.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-800 antialiased selection:bg-[#EAB308] selection:text-[#021124] font-sans">
+      <body className="min-h-screen flex flex-col bg-[#FAFBFD] text-slate-800 antialiased selection:bg-[#00D2FF] selection:text-[#040D21] font-sans">
         {/* Navigation Bar */}
         <Navbar />
 

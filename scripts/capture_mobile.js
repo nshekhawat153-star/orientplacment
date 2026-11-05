@@ -9,7 +9,8 @@ async function testMobile() {
     defaultViewport: { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
   });
   const page = await browser.newPage();
-  await page.goto('http://localhost:3005', { waitUntil: 'networkidle0' });
+  await page.goto('http://localhost:3005', { waitUntil: 'domcontentloaded' });
+  await new Promise(r => setTimeout(r, 1500));
   await page.screenshot({ path: path.join(__dirname, '..', 'screenshots', 'mobile_hero.png') });
   console.log('Captured mobile_hero.png');
 

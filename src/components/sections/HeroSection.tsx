@@ -10,20 +10,23 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative pt-28 sm:pt-36 lg:pt-44 pb-16 md:pb-28 text-white overflow-hidden border-b border-slate-800 bg-[#021124] w-full max-w-full"
+      className="relative pt-28 sm:pt-36 lg:pt-44 pb-16 md:pb-28 text-white overflow-hidden border-b border-white/10 bg-[#040D21] w-full max-w-full"
     >
-      {/* Background Image Layer with Dark Luxury Gradient */}
+      {/* Background Image Layer with Swift-Style Left-to-Right Gradient */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <Image
-          src="/images/about-team.jpg"
-          alt="Orion Placement Executive Headquarters"
+          src="/images/hero-executive-boardroom.jpg"
+          alt="Orion Placement Executive Strategic Search"
           fill
           priority
           sizes="100vw"
           quality={75}
-          className="object-cover object-center opacity-30 mix-blend-luminosity"
+          className="object-cover object-[75%_center] lg:object-right opacity-65"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#021124] via-[#021124]/90 to-[#021124]/60" />
+        {/* Left-to-Right gradient: Deep solid cosmic navy on the left for crisp copy readability, smoothly fading to transparent on the right so the twilight skyline and boardroom are visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#040D21] via-[#040D21]/95 via-45% sm:via-[#040D21]/80 sm:via-60% to-transparent" />
+        {/* Top-to-bottom subtle gradient so navbar seamlessly transitions into hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#040D21] via-transparent to-[#040D21]/90" />
       </div>
 
       {/* 1400px Container Matching SwiftPainting Alignment */}
@@ -34,24 +37,24 @@ export function HeroSection() {
           <div className="lg:col-span-7 space-y-4 sm:space-y-7 text-left">
             
             {/* Kicker Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-sans font-extrabold uppercase tracking-widest text-[#EAB308] backdrop-blur-md max-w-full">
-              <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#EAB308] text-[#EAB308] shrink-0" />
+            <div className="inline-flex items-center gap-2 bg-[#00D2FF]/10 border border-[#00D2FF]/30 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-sans font-extrabold uppercase tracking-widest text-[#00D2FF] backdrop-blur-md max-w-full">
+              <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#00D2FF] text-[#00D2FF] shrink-0" />
               <span className="truncate">EXECUTIVE SEARCH &amp; SPECIALIZED STAFFING</span>
             </div>
 
             {/* H1 Title with Luxury Editorial Instrument Serif */}
             <h1 className="text-[40px] sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-white leading-[1.06] sm:leading-[1.08] tracking-tight font-normal">
               Connecting High-Caliber Talent With{" "}
-              <span className="italic font-normal text-[#EAB308]">
+              <span className="italic font-normal text-[#00D2FF]">
                 Industry Leaders
               </span>
             </h1>
 
             {/* Rating Social Proof Line */}
             <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base font-sans font-semibold text-slate-200">
-              <div className="flex text-[#EAB308] shrink-0">
+              <div className="flex text-[#00D2FF] shrink-0">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-[#EAB308] text-[#EAB308]" />
+                  <Star key={i} className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-[#00D2FF] text-[#00D2FF]" />
                 ))}
               </div>
               <span className="truncate">
@@ -68,44 +71,44 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <a
                 href="#hero-form-card"
-                className="bg-[#EAB308] text-slate-950 hover:bg-[#FACC15] font-sans font-extrabold text-sm sm:text-base uppercase tracking-wider py-3.5 sm:py-4 px-6 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center group cursor-pointer"
+                className="bg-gradient-to-r from-[#00D2FF] to-[#38BDF8] text-[#040D21] hover:brightness-105 font-sans font-extrabold text-sm sm:text-base uppercase tracking-wider py-3.5 sm:py-4 px-6 sm:px-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 text-center group cursor-pointer"
               >
                 <span>Request Candidate Shortlist</span>
-                <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#040D21] group-hover:translate-x-1 transition-transform" />
               </a>
 
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                className="border-2 border-white/20 hover:border-[#EAB308] bg-white/5 hover:bg-white/10 text-white font-sans font-bold text-sm sm:text-base py-3.5 sm:py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                className="border-2 border-white/20 hover:border-[#00D2FF] bg-white/5 hover:bg-white/10 text-white font-sans font-bold text-sm sm:text-base py-3.5 sm:py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
               >
-                <Phone className="w-4 h-4 text-[#EAB308]" />
+                <Phone className="w-4 h-4 text-[#00D2FF]" />
                 <span>Call (201) 572-9538</span>
               </a>
             </div>
 
             {/* 3 Glassmorphism Trust Badges Bar */}
-            <div className="pt-5 sm:pt-7 border-t border-white/20 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-xs sm:text-sm font-sans font-bold text-white">
-              <div className="bg-white/10 backdrop-blur-md border border-[#EAB308]/40 hover:border-[#EAB308] p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EAB308]/20 border border-[#EAB308]/40 flex items-center justify-center text-[#EAB308] shrink-0 group-hover:scale-105 transition-transform">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#EAB308]" />
+            <div className="pt-5 sm:pt-7 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-xs sm:text-sm font-sans font-bold text-white">
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-[#00D2FF]/50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00D2FF]/15 border border-[#00D2FF]/30 flex items-center justify-center text-[#00D2FF] shrink-0 group-hover:scale-105 transition-transform">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#00D2FF]" />
                 </div>
                 <span className="font-sans font-bold text-xs sm:text-sm text-white leading-tight">
                   100% Contingency (Zero Upfront)
                 </span>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md border border-[#EAB308]/40 hover:border-[#EAB308] p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EAB308]/20 border border-[#EAB308]/40 flex items-center justify-center text-[#EAB308] shrink-0 group-hover:scale-105 transition-transform">
-                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#EAB308]" />
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-[#00D2FF]/50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00D2FF]/15 border border-[#00D2FF]/30 flex items-center justify-center text-[#00D2FF] shrink-0 group-hover:scale-105 transition-transform">
+                  <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#00D2FF]" />
                 </div>
                 <span className="font-sans font-bold text-xs sm:text-sm text-white leading-tight">
                   90-Day Placement Warranty
                 </span>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-md border border-[#EAB308]/40 hover:border-[#EAB308] p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#EAB308]/20 border border-[#EAB308]/40 flex items-center justify-center text-[#EAB308] shrink-0 group-hover:scale-105 transition-transform">
-                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#EAB308]" />
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-[#00D2FF]/50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 transition-all group">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#00D2FF]/15 border border-[#00D2FF]/30 flex items-center justify-center text-[#00D2FF] shrink-0 group-hover:scale-105 transition-transform">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#00D2FF]" />
                 </div>
                 <span className="font-sans font-bold text-xs sm:text-sm text-white leading-tight">
                   Top 5% Passive Performers

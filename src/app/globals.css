@@ -4,8 +4,8 @@
 @theme {
   --font-serif: var(--font-instrument-serif), Georgia, serif;
   --font-sans: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
-  --color-primary: #021124;
-  --color-accent: #EAB308;
+  --color-primary: #040D21;
+  --color-accent: #00D2FF;
 }
 
 @layer base {
@@ -31,7 +31,7 @@
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FAF8F5;
+    background-color: #FAFBFD;
   }
 
   main {

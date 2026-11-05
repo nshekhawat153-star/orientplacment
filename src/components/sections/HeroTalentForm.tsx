@@ -72,13 +72,13 @@ export function HeroTalentForm() {
 
   return (
     <div id="hero-form-card" className="w-full lg:col-span-5 scroll-mt-28 justify-end pt-4 lg:pt-0">
-      <div className="bg-[#FAF8F5] text-slate-900 rounded-[28px] p-6 sm:p-9 shadow-2xl border-2 border-[#EAB308]/40 relative w-full max-w-[480px] ml-auto overflow-hidden">
+      <div className="bg-white text-slate-900 rounded-[28px] p-6 sm:p-9 shadow-2xl border-2 border-[#00D2FF]/30 relative w-full max-w-[480px] ml-auto overflow-hidden">
         
-        {/* Subtle Warm Accent Flare */}
-        <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#EAB308]/15 rounded-full blur-2xl pointer-events-none" />
+        {/* Subtle Starlight Accent Flare */}
+        <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#00D2FF]/15 rounded-full blur-2xl pointer-events-none" />
 
         {/* Tab Switcher: Employer vs Candidate */}
-        <div className="grid grid-cols-2 p-1 bg-slate-200/70 rounded-xl mb-5 relative z-10">
+        <div className="grid grid-cols-2 p-1 bg-slate-100 rounded-xl mb-5 relative z-10 border border-slate-200">
           <button
             type="button"
             onClick={() => {
@@ -87,11 +87,11 @@ export function HeroTalentForm() {
             }}
             className={`py-2 px-3 text-xs sm:text-sm font-sans font-bold rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
               activeTab === "employer"
-                ? "bg-[#021124] text-white shadow-sm"
-                : "text-slate-700 hover:text-[#021124]"
+                ? "bg-[#040D21] text-white shadow-sm"
+                : "text-slate-600 hover:text-[#040D21]"
             }`}
           >
-            <Briefcase className="w-3.5 h-3.5 text-[#EAB308]" />
+            <Briefcase className="w-3.5 h-3.5 text-[#00D2FF]" />
             <span>I Need To Hire</span>
           </button>
 
@@ -103,30 +103,30 @@ export function HeroTalentForm() {
             }}
             className={`py-2 px-3 text-xs sm:text-sm font-sans font-bold rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
               activeTab === "candidate"
-                ? "bg-[#021124] text-white shadow-sm"
-                : "text-slate-700 hover:text-[#021124]"
+                ? "bg-[#040D21] text-white shadow-sm"
+                : "text-slate-600 hover:text-[#040D21]"
             }`}
           >
-            <Users className="w-3.5 h-3.5 text-[#EAB308]" />
+            <Users className="w-3.5 h-3.5 text-[#00D2FF]" />
             <span>I Seek A Role</span>
           </button>
         </div>
 
         {/* Form Title & Privacy Tag */}
         <div className="relative z-10 mb-4">
-          <h2 className="text-2xl sm:text-3xl font-serif text-[#021124] font-normal leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-serif text-[#040D21] font-normal leading-tight">
             {activeTab === "employer" ? (
               <>
-                Request Candidate <span className="italic font-normal text-[#EAB308]">Shortlist</span>
+                Request Candidate <span className="italic font-normal text-[#0284C7]">Shortlist</span>
               </>
             ) : (
               <>
-                Submit Confidential <span className="italic font-normal text-[#EAB308]">Profile</span>
+                Submit Confidential <span className="italic font-normal text-[#0284C7]">Profile</span>
               </>
             )}
           </h2>
           <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-1 font-sans">
-            <Lock className="w-3.5 h-3.5 text-[#EAB308] shrink-0" />
+            <Lock className="w-3.5 h-3.5 text-[#00D2FF] shrink-0" />
             <span>Strict NDA confidentiality. Direct partner review.</span>
           </p>
         </div>
@@ -134,13 +134,13 @@ export function HeroTalentForm() {
         {/* 2-Step Progress Indicator */}
         {!isSubmitted && (
           <div className="mb-5 relative z-10">
-            <div className="flex justify-between items-center text-[11px] font-sans font-extrabold uppercase tracking-wider text-[#021124] mb-1.5">
+            <div className="flex justify-between items-center text-[11px] font-sans font-extrabold uppercase tracking-wider text-[#040D21] mb-1.5">
               <span>Step {step} of 2: {step === 1 ? "Contact Details" : "Role Specifications"}</span>
-              <span className="text-[#EAB308] font-bold">{step === 1 ? "50%" : "100%"}</span>
+              <span className="text-[#0284C7] font-bold">{step === 1 ? "50%" : "100%"}</span>
             </div>
-            <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
               <div
-                className="h-full bg-[#EAB308] transition-all duration-300 ease-out"
+                className="h-full bg-gradient-to-r from-[#00D2FF] to-[#38BDF8] transition-all duration-300 ease-out"
                 style={{ width: step === 1 ? "50%" : "100%" }}
               />
             </div>
@@ -153,18 +153,18 @@ export function HeroTalentForm() {
             <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-2xl font-bold border-2 border-emerald-400">
               ✓
             </div>
-            <h3 className="text-2xl font-serif text-[#021124]">
+            <h3 className="text-2xl font-serif text-[#040D21]">
               {activeTab === "employer" ? "Requisition Received" : "Profile Submitted"}
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
               Thank you, <span className="font-bold text-slate-900">{name || "Partner"}</span>. Our managing partners will review your requirements and reach out within 2 business hours.
             </p>
-            <div className="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-500 max-w-xs mx-auto">
-              Direct Desk Hotline: <strong className="text-[#021124]">(201) 572-9538</strong>
+            <div className="p-3 bg-[#FAFBFD] rounded-xl border border-slate-200 text-xs text-slate-500 max-w-xs mx-auto">
+              Direct Desk Hotline: <strong className="text-[#040D21]">(201) 572-9538</strong>
             </div>
             <button
               onClick={handleReset}
-              className="text-xs font-bold text-[#021124] hover:text-[#EAB308] underline transition-colors pt-2 cursor-pointer block mx-auto"
+              className="text-xs font-bold text-[#0284C7] hover:text-[#040D21] underline transition-colors pt-2 cursor-pointer block mx-auto"
             >
               Submit Another Request
             </button>
@@ -188,7 +188,7 @@ export function HeroTalentForm() {
                     placeholder="e.g. Sarah Jenkins"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-sm text-slate-900 transition-all bg-white"
+                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                   />
                 </div>
 
@@ -202,7 +202,7 @@ export function HeroTalentForm() {
                     placeholder="s.jenkins@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-sm text-slate-900 transition-all bg-white"
+                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                   />
                 </div>
 
@@ -216,16 +216,16 @@ export function HeroTalentForm() {
                     placeholder="(201) 000-0000"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-sm text-slate-900 transition-all bg-white"
+                    className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full mt-2 bg-[#021124] text-white hover:bg-[#EAB308] hover:text-[#021124] font-sans font-extrabold text-sm sm:text-base py-3 sm:py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full mt-2 bg-gradient-to-r from-[#00D2FF] to-[#38BDF8] text-[#040D21] hover:brightness-110 font-sans font-extrabold text-sm sm:text-base py-3 sm:py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>Continue to Step 2</span>
-                  <ArrowRight className="w-4 h-4 text-[#EAB308] group-hover:text-[#021124] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-[#040D21] group-hover:translate-x-1 transition-all" />
                 </button>
               </>
             ) : (
@@ -243,7 +243,7 @@ export function HeroTalentForm() {
                         placeholder="e.g. Apex Health Partners / Law Firm"
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
-                        className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-sm text-slate-900 transition-all bg-white"
+                        className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                       />
                     </div>
 
@@ -255,7 +255,7 @@ export function HeroTalentForm() {
                         <select
                           value={roleType}
                           onChange={(e) => setRoleType(e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-xl border border-slate-300 focus:border-[#021124] outline-none text-xs sm:text-sm text-slate-900 bg-white"
+                          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:border-[#00D2FF] outline-none text-xs sm:text-sm text-slate-900 bg-[#FAFBFD]"
                         >
                           <option value="Legal & Law Firms">Legal & Law</option>
                           <option value="Healthcare & Clinical">Healthcare</option>
@@ -273,7 +273,7 @@ export function HeroTalentForm() {
                         <select
                           value={urgency}
                           onChange={(e) => setUrgency(e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-xl border border-slate-300 focus:border-[#021124] outline-none text-xs sm:text-sm text-slate-900 bg-white"
+                          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:border-[#00D2FF] outline-none text-xs sm:text-sm text-slate-900 bg-[#FAFBFD]"
                         >
                           <option value="Immediate (< 14 days)">Immediate</option>
                           <option value="Within 30 Days">30 Days</option>
@@ -292,7 +292,7 @@ export function HeroTalentForm() {
                         placeholder="e.g. Litigation Partner, Chief Medical Officer, VP Eng"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-xs sm:text-sm text-slate-900 transition-all bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-xs sm:text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                       />
                     </div>
                   </>
@@ -308,24 +308,26 @@ export function HeroTalentForm() {
                         placeholder="e.g. Senior Commercial Litigation Counsel"
                         value={candidateTitle}
                         onChange={(e) => setCandidateTitle(e.target.value)}
-                        className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-[#021124] focus:ring-2 focus:ring-[#021124]/15 outline-none text-sm text-slate-900 transition-all bg-white"
+                        className="w-full px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-[#00D2FF] focus:ring-2 focus:ring-[#00D2FF]/20 outline-none text-sm text-slate-900 transition-all bg-[#FAFBFD]"
                       />
                     </div>
 
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1">
-                        Seniority Level *
-                      </label>
-                      <select
-                        value={candidateExperience}
-                        onChange={(e) => setCandidateExperience(e.target.value)}
-                        className="w-full px-3 py-2.5 rounded-xl border border-slate-300 focus:border-[#021124] outline-none text-xs sm:text-sm text-slate-900 bg-white"
-                      >
-                        <option value="Mid-Level (3-5 yrs)">Mid-Level (3-5 yrs)</option>
-                        <option value="Senior (6-10 yrs)">Senior (6-10 yrs)</option>
-                        <option value="Director / VP (10-15 yrs)">Director / VP (10-15 yrs)</option>
-                        <option value="Executive / Partner (15+ yrs)">Executive / Partner (15+ yrs)</option>
-                      </select>
+                    <div className="grid grid-cols-1 gap-2.5">
+                      <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-800 mb-1">
+                          Seniority Level *
+                        </label>
+                        <select
+                          value={candidateExperience}
+                          onChange={(e) => setCandidateExperience(e.target.value)}
+                          className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:border-[#00D2FF] outline-none text-xs sm:text-sm text-slate-900 bg-[#FAFBFD]"
+                        >
+                          <option value="Mid-Level (3-5 yrs)">Mid-Level (3-5 yrs)</option>
+                          <option value="Senior (6-10 yrs)">Senior (6-10 yrs)</option>
+                          <option value="Director / VP (10-15 yrs)">Director / VP (10-15 yrs)</option>
+                          <option value="Executive / Partner (15+ yrs)">Executive / Partner (15+ yrs)</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div>
@@ -347,8 +349,8 @@ export function HeroTalentForm() {
                           </button>
                         </div>
                       ) : (
-                        <label className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-dashed border-slate-300 hover:border-[#021124] bg-white text-xs text-slate-500 hover:text-[#021124] cursor-pointer transition-colors">
-                          <UploadCloud className="w-4 h-4 text-[#EAB308]" />
+                        <label className="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-dashed border-slate-300 hover:border-[#00D2FF] bg-[#FAFBFD] text-xs text-slate-600 hover:text-[#040D21] cursor-pointer transition-colors">
+                          <UploadCloud className="w-4 h-4 text-[#00D2FF]" />
                           <span>Upload PDF or Word CV (Max 10MB)</span>
                           <input
                             type="file"
@@ -366,14 +368,14 @@ export function HeroTalentForm() {
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="w-1/3 border border-slate-300 text-slate-800 font-bold text-xs sm:text-sm py-3 rounded-xl hover:bg-slate-100 transition-all cursor-pointer"
+                    className="w-1/3 border border-slate-200 text-slate-700 font-bold text-xs sm:text-sm py-3 rounded-xl hover:bg-slate-100 transition-all cursor-pointer"
                   >
                     ← Back
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-2/3 bg-[#021124] text-white hover:bg-[#EAB308] hover:text-[#021124] font-extrabold text-xs sm:text-sm py-3 px-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-2/3 bg-gradient-to-r from-[#00D2FF] to-[#38BDF8] text-[#040D21] hover:brightness-110 font-extrabold text-xs sm:text-sm py-3 px-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <span>Submitting...</span>

@@ -87,18 +87,18 @@ export function LivePlacementToast() {
   return (
     <aside 
       aria-label="Recent Placement Notifications"
-      className={`fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-40 max-w-[340px] sm:max-w-[370px] transition-all duration-500 ease-out ${
+      className={`fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 max-w-[340px] sm:max-w-[370px] transition-all duration-500 ease-out ${
       isVisible
         ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
         : "opacity-0 translate-y-4 scale-95 pointer-events-none"
     }`}>
-      <div className="bg-[#000F2E]/95 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-2xl shadow-2xl border border-white/15 relative overflow-hidden group">
-        {/* Subtle Accent Glow */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-2xl pointer-events-none" />
+      <div className="bg-white/95 backdrop-blur-md text-slate-900 p-4 rounded-2xl shadow-2xl shadow-slate-900/10 border border-slate-200/90 relative overflow-hidden group">
+        {/* Subtle Starlight Accent Indicator */}
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00D2FF] to-[#38BDF8]" />
 
         {/* Header Strip */}
-        <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-white/10 text-[11px]">
-          <div className="flex items-center gap-1.5 font-bold text-emerald-400">
+        <div className="flex items-center justify-between gap-2 pb-2.5 mb-2.5 border-b border-slate-100 text-[11px]">
+          <div className="flex items-center gap-1.5 font-bold text-emerald-800 bg-emerald-50 border border-emerald-200/70 px-2 py-0.5 rounded-md">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -107,10 +107,10 @@ export function LivePlacementToast() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-slate-400">{current.timeAgo}</span>
+            <span className="text-[10px] font-medium text-slate-600">{current.timeAgo}</span>
             <button
               onClick={() => setIsDismissed(true)}
-              className="text-slate-400 hover:text-white transition-colors p-0.5 rounded cursor-pointer"
+              className="text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors p-1 rounded cursor-pointer"
               aria-label="Dismiss placement alert"
             >
               <X className="w-3.5 h-3.5" />
@@ -120,17 +120,17 @@ export function LivePlacementToast() {
 
         {/* Content */}
         <div className="space-y-1">
-          <p className="text-xs sm:text-sm font-bold text-white line-clamp-1">
+          <p className="text-sm font-serif font-bold text-slate-900 line-clamp-1 leading-snug">
             {current.role}
           </p>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] text-slate-300">
-            <span className="flex items-center gap-1">
-              <Building className="w-3 h-3 text-[#D4AF37]" />
-              <span className="line-clamp-1">{current.firmType}</span>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-slate-600 font-sans">
+            <span className="flex items-center gap-1 font-medium">
+              <Building className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
+              <span className="line-clamp-1 text-slate-700">{current.firmType}</span>
             </span>
-            <span className="text-slate-500">·</span>
-            <span className="flex items-center gap-1 text-slate-400">
-              <MapPin className="w-3 h-3" />
+            <span className="text-slate-300">·</span>
+            <span className="flex items-center gap-1 text-slate-600">
+              <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
               <span>{current.location}</span>
             </span>
           </div>

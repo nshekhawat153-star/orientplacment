@@ -1,40 +1,43 @@
 :root {
-  /* Brand Color Palette - Orion Placement (Luxury Executive Search) */
-  --color-header-bg: #021124;        /* Dark Midnight Navy */
-  --color-primary: #021124;          /* Midnight Navy */
-  --color-primary-dark: #010A17;     /* Deep Obsidian */
-  --color-primary-light: #0A2540;    /* Classic Navy */
-  --color-secondary: #0A2540;        /* Deep Navy */
-  --color-accent: #EAB308;           /* Vibrant Golden Yellow / Champagne Gold */
-  --color-accent-hover: #CA8A04;     /* Deep Gold Hover */
-  --color-star: #EAB308;             /* Star Amber */
+  /* Brand Color Palette - Orion Placement (Derived Directly from Official Logo) */
+  /* Logo Colors: Deep Cosmic Midnight (#040D21), Celestial Starlight Cyan (#00D2FF, #38BDF8), Ice White (#FFFFFF) */
+  --color-header-bg: #040D21;        /* Cosmic Midnight Navy */
+  --color-primary: #040D21;          /* Cosmic Midnight Navy */
+  --color-primary-dark: #020712;     /* Deep Cosmic Obsidian */
+  --color-primary-light: #0B1E40;    /* Deep Celestial Navy */
+  --color-secondary: #0A2244;        /* Rich Sapphire Navy */
+  --color-accent: #00D2FF;           /* Glowing Orion Celestial Cyan */
+  --color-accent-hover: #38BDF8;     /* Starlight Cyan Hover */
+  --color-accent-glow: rgba(0, 210, 255, 0.25);
+  --color-star: #00D2FF;             /* Orion Starlight */
 
   /* Neutral Surface Palette */
-  --color-bg-light: #FAF8F5;         /* Warm Cream Architectural Surface */
+  --color-bg-light: #FAFBFD;         /* Pristine Architectural Frost */
   --color-bg-white: #FFFFFF;         /* Crisp White */
-  --color-bg-card: #FAF8F5;          /* Warm Card Background */
+  --color-bg-card: #FFFFFF;          /* Pure Card Background */
   --color-bg-subtle: #F1F5F9;        /* Light Slate Tint */
 
   /* Text & Border Colors */
-  --color-text-primary: #021124;     /* Midnight Charcoal Headings */
-  --color-text-secondary: #334155;   /* Body Slate (Readable slate-700) */
-  --color-text-muted: #64748B;       /* Secondary Muted Text */
+  --color-text-primary: #040D21;     /* Cosmic Midnight Headings */
+  --color-text-secondary: #334155;   /* Body Slate (slate-700) */
+  --color-text-muted: #64748B;       /* Secondary Muted Slate */
   --color-border: #E2E8F0;           /* Soft Border */
-  --color-border-warm: #E5D9C5;      /* Warm Champagne Cream Border */
+  --color-border-warm: #CBD5E1;      /* Refined Architectural Border */
 
   /* Success & Badges */
-  --color-success: #166534;
-  --color-success-bg: #DCFCE7;
+  --color-success: #059669;
+  --color-success-bg: #ECFDF5;
 
   /* Typography Variables */
   --font-serif: var(--font-instrument-serif), Georgia, serif;
   --font-sans: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
 
   /* Shadow Elevation */
-  --shadow-sm: 0 1px 3px rgba(2, 17, 36, 0.08);
-  --shadow-md: 0 4px 14px rgba(2, 17, 36, 0.1);
-  --shadow-lg: 0 14px 36px rgba(2, 17, 36, 0.12);
-  --shadow-xl: 0 25px 60px rgba(2, 17, 36, 0.18);
+  --shadow-sm: 0 1px 3px rgba(4, 13, 33, 0.06);
+  --shadow-md: 0 4px 14px rgba(4, 13, 33, 0.08);
+  --shadow-lg: 0 14px 36px rgba(4, 13, 33, 0.12);
+  --shadow-xl: 0 25px 60px rgba(4, 13, 33, 0.16);
+  --shadow-glow: 0 0 30px rgba(0, 210, 255, 0.3);
 
   /* Radius Tokens */
   --radius-sm: 8px;
